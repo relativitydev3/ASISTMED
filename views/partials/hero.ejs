@@ -1,0 +1,51 @@
+<section class="hero" id="hero" aria-label="Presentación principal">
+
+  <div class="hero__shapes" aria-hidden="true">
+    <span class="hero__shape hero__shape--1"></span>
+    <span class="hero__shape hero__shape--2"></span>
+    <span class="hero__shape hero__shape--3"></span>
+  </div>
+
+  <div class="hero__container container">
+
+    <div class="hero__content" data-animate="slide-right">
+      <p class="hero__eyebrow"><%= hero.marca %></p>
+      <h1 class="hero__title"><%= hero.titulo %></h1>
+      <p class="hero__subtitle"><%= hero.subtitulo %></p>
+      <p class="hero__text"><%= hero.texto %></p>
+
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary btn--lg">
+          <%= hero.botonPrincipal %>
+        </a>
+        <a
+          href="<%= hero.whatsappLink %>"
+          class="btn btn--outline btn--lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.63 1.44 5.16L2 22l5.09-1.53a9.87 9.87 0 0 0 4.95 1.33h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2Z"/>
+          </svg>
+          <%= hero.botonWhatsapp %>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__media" data-animate="fade-in">
+      <img
+        src="<%= hero.imagen %>"
+        alt="<%= hero.imagenAlt %>"
+        class="hero__image"
+        width="640"
+        height="720"
+        fetchpriority="high"
+      >
+      <div class="hero__media-glow" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <a href="#about" class="hero__scroll" aria-label="Bajar a la siguiente sección">
+    <span class="hero__scroll-dot"></span>
+  </a>
+</section>

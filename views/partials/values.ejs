@@ -1,0 +1,35 @@
+<section class="values" id="values" aria-labelledby="values-title">
+  <div class="values__container container">
+
+    <div class="section-heading">
+      <p class="section-eyebrow">Nuestros Principios</p>
+      <h2 class="section-title" id="values-title">Misión, Visión y Valores</h2>
+    </div>
+
+    <div class="values__grid">
+
+      <article class="value-card" data-animate="fade-up">
+        <div class="value-card__icon" aria-hidden="true"><%- mision.icono %></div>
+        <h3 class="value-card__title"><%= mision.titulo %></h3>
+        <p class="value-card__text"><%= mision.texto %></p>
+      </article>
+
+      <article class="value-card" data-animate="fade-up" data-delay="150">
+        <div class="value-card__icon" aria-hidden="true"><%- vision.icono %></div>
+        <h3 class="value-card__title"><%= vision.titulo %></h3>
+        <p class="value-card__text"><%= vision.texto %></p>
+      </article>
+
+      <article class="value-card" data-animate="fade-up" data-delay="300">
+        <div class="value-card__icon" aria-hidden="true"><%- valores.icono %></div>
+        <h3 class="value-card__title"><%= valores.titulo %></h3>
+        <ul class="value-card__list">
+          <% valores.items.forEach(function(item){ %>
+            <li><%= item %></li>
+          <% }) %>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>

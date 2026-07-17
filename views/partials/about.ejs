@@ -1,0 +1,36 @@
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="about__container container">
+
+    <div class="about__media" data-animate="fade-in">
+      <img
+        src="<%= empresa.aboutImagen %>"
+        alt="Equipo de <%= empresa.nombre %> brindando atención domiciliaria"
+        class="about__image"
+        loading="lazy"
+        width="560"
+        height="640"
+      >
+      <div class="about__media-badge">
+        <span class="about__media-badge-icon" aria-hidden="true">✓</span>
+        <span>Personal certificado</span>
+      </div>
+    </div>
+
+    <div class="about__content" data-animate="slide-left">
+      <p class="section-eyebrow">Quiénes Somos</p>
+      <h2 class="section-title" id="about-title"><%= empresa.aboutTitulo %></h2>
+      <p class="about__lead"><%= empresa.aboutLead %></p>
+      <p class="section-text"><%= empresa.aboutTexto %></p>
+
+      <div class="about__stats" role="list">
+        <% estadisticas.forEach(function(stat){ %>
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number" data-counter="<%= stat.valor %>" data-suffix="<%= stat.sufijo %>">0</span>
+            <span class="stat-card__label"><%= stat.etiqueta %></span>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+
+  </div>
+</section>
