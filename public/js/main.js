@@ -476,6 +476,94 @@ function initYear(){
   document.getElementById('year').textContent = new Date().getFullYear();
 }
 
+const COVERAGE_AREAS = [
+  { name: 'Medellín', lat: 6.2476, lng: -75.5658, principal: true },
+  { name: 'Bello', lat: 6.3373, lng: -75.5580 },
+  { name: 'Envigado', lat: 6.1759, lng: -75.5917 },
+  { name: 'Sabaneta', lat: 6.1519, lng: -75.6162 },
+  { name: 'Itagüí', lat: 6.1714, lng: -75.6130 },
+  { name: 'La Estrella', lat: 6.1577, lng: -75.6431 },
+  { name: 'Copacabana', lat: 6.3464, lng: -75.5089 },
+  { name: 'Girardota', lat: 6.3794, lng: -75.4486 },
+  { name: 'Barbosa', lat: 6.4381, lng: -75.3314 }
+];
+
+function initCoverageMap(){
+  const mapEl = document.getElementById('coverageMap');
+  if (!mapEl || typeof L === 'undefined' || mapEl.dataset.initialized) return;
+
+  const map = L.map('coverageMap', {
+    scrollWheelZoom: false,
+    zoomControl: true
+  }).setView([6.2518, -75.5636], 11);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+  }).addTo(map);
+
+  const markerIcon = L.divIcon({
+    className: 'coverage-marker',
+    html: '<span class="coverage-marker__dot"></span>',
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+    popupAnchor: [0, -12]
+  });
+
+  const markers = {};
+
+  COVERAGE_AREAS.forEach(area => {
+    const marker = L.marker([area.lat, area.lng], { icon: markerIcon })
+      .addTo(map)
+      .bindPopup(`<strong>${area.name}</strong><br><span>Cobertura ASISTMED disponible</span>`);
+
+    if (area.principal) {
+      L.circle([area.lat, area.lng], {
+        radius: 4500,
+        color: '#0D6EFD',
+        fillColor: '#0D6EFD',
+        fillOpacity: 0.08,
+        weight: 2
+      }).addTo(map);
+    }
+
+    markers[area.name] = marker;
+  });
+
+  document.querySelectorAll('.coverage-list li[data-municipio]').forEach(li => {
+    const focusMunicipio = () => {
+      const name = li.dataset.municipio;
+      const area = COVERAGE_AREAS.find(item => item.name === name);
+      const marker = markers[name];
+      if (!area || !marker) return;
+
+      document.querySelectorAll('.coverage-list li.active').forEach(item => item.classList.remove('active'));
+      li.classList.add('active');
+      map.flyTo([area.lat, area.lng], 13, { duration: 1.1 });
+      marker.openPopup();
+    };
+
+    li.addEventListener('click', focusMunicipio);
+    li.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        focusMunicipio();
+      }
+    });
+  });
+
+  mapEl.dataset.initialized = 'true';
+
+  const resizeObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      setTimeout(() => map.invalidateSize(), 150);
+      resizeObserver.disconnect();
+    }
+  }, { threshold: 0.2 });
+
+  resizeObserver.observe(mapEl);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderApproach();
   renderServices();
@@ -491,6 +579,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initForm();
   initYear();
   initServiceModal();
+  initCoverageMap();
 
   // Vuelve a activar el observer de reveal sobre los nodos recién inyectados
   initReveal();
