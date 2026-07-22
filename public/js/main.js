@@ -61,7 +61,7 @@ const ASISTMED_DATA = {
       incluye:["Limpieza y desinfección de heridas","Cambio de apósitos y vendajes","Manejo de úlceras por presión","Seguimiento post-quirúrgico","Evaluación de signos de infección","Educación al paciente y a la familia"]
     },
     {
-      icono:"balanza", imagen:"/img/service-05.jpg", titulo:"Tratamientos Sobrepeso",
+      icono:"balanza", imagen:"/img/service-05.PNG", titulo:"Tratamientos Sobrepeso",
       desc:"Programas de acompañamiento nutricional y seguimiento de peso.",
       incluye:["Seguimiento de peso y medidas corporales","Plan de alimentación supervisado","Registro de progreso periódico","Acompañamiento en hábitos saludables","Motivación y apoyo continuo","Coordinación con profesionales de salud"]
     },
@@ -71,7 +71,7 @@ const ASISTMED_DATA = {
       incluye:["Supervisión continua en el hogar","Compañía y contención emocional","Vigilancia de la seguridad del paciente","Apoyo en actividades cotidianas","Reportes periódicos a la familia","Atención respetuosa y humanizada"]
     },
     {
-      icono:"banio", imagen:"/img/service-07.jpg", titulo:"Acompañamiento en Baño",
+      icono:"banio", imagen:"/img/service-07.PNG", titulo:"Acompañamiento en Baño",
       desc:"Asistencia respetuosa en higiene personal diaria.",
       incluye:["Asistencia en ducha o baño con privacidad","Apoyo en higiene personal diaria","Prevención de caídas en el baño","Cuidado de la piel e hidratación","Uso seguro de elementos de apoyo","Trato digno y respetuoso"]
     },
@@ -81,7 +81,7 @@ const ASISTMED_DATA = {
       incluye:["Apoyo para caminar dentro del hogar","Traslados seguros cama-silla","Ejercicios de movilidad guiados","Uso correcto de ayudas técnicas","Prevención de caídas","Acompañamiento en desplazamientos cortos"]
     },
     {
-      icono:"cerebro", imagen:"/img/service-09.jpg", titulo:"Estimulación Cognitiva",
+      icono:"cerebro", imagen:"/img/service-09.PNG", titulo:"Estimulación Cognitiva",
       desc:"Actividades diseñadas para mantener activa la mente.",
       incluye:["Actividades de memoria y atención","Ejercicios de orientación temporal","Juegos y dinámicas mentales","Lectura y conversación guiada","Seguimiento de avances cognitivos","Plan adaptado a cada paciente"]
     },
@@ -91,12 +91,12 @@ const ASISTMED_DATA = {
       incluye:["Rutinas adaptadas a la condición del paciente","Ejercicios de flexibilidad y fuerza","Movilización articular supervisada","Caminatas guiadas y seguras","Prevención del sedentarismo","Progresión según capacidades"]
     },
     {
-      icono:"ludico", imagen:"/img/service-11.jpg", titulo:"Actividades Lúdicas",
+      icono:"ludico", imagen:"/img/service-11.PNG", titulo:"Actividades Lúdicas",
       desc:"Espacios de entretenimiento y esparcimiento personalizado.",
       incluye:["Entretenimiento personalizado","Juegos de mesa y manualidades","Música y actividades de recuerdo","Estimulación emocional positiva","Actividades al aire libre (si aplica)","Compañía agradable y motivadora"]
     },
     {
-      icono:"peptido", imagen:"/img/service-12.jpg", titulo:"Programa de Optimización y Terapias con Péptidos",
+      icono:"peptido", imagen:"/img/service-12.PNG", titulo:"Programa de Optimización y Terapias con Péptidos",
       desc:"Programa integral de bienestar y terapias avanzadas supervisado por profesionales.",
       incluye:["Evaluación inicial personalizada","Plan de terapias supervisado","Seguimiento clínico periódico","Educación sobre el tratamiento","Coordinación con el equipo médico","Acompañamiento integral del paciente"]
     }
