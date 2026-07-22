@@ -809,6 +809,17 @@ body.modal-open{ overflow: hidden; }
   color: var(--gray-text);
   margin-bottom: 28px;
 }
+.service-modal__aviso{
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--blue-dark);
+  background: rgba(13,110,253,0.08);
+  border: 1px solid rgba(13,110,253,0.18);
+  border-left: 4px solid var(--blue);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: -12px 0 24px;
+}
 
 .service-modal__includes h3{
   font-size: 14px;
