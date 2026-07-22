@@ -1,52 +1,1376 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ASISTMED - Inicio</title>
-  <link rel="stylesheet" href="/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASISTMED Domicilios | Cuidado Profesional y Atención Humana en Casa</title>
+<meta name="description" content="ASISTMED Domicilios ofrece cuidado profesional de salud a domicilio en Medellín y el Valle de Aburrá: inyectología, curaciones, acompañamiento a adultos mayores y terapias especializadas.">
+<meta name="keywords" content="asistmed, cuidado a domicilio, inyectología a domicilio, enfermería domiciliaria, adulto mayor Medellín, curaciones a domicilio, cuidadores Medellín">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.asistmed.com/">
+<meta name="theme-color" content="#0D6EFD">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ASISTMED Domicilios | Cuidado Profesional, Atención Humana">
+<meta property="og:description" content="Tu bienestar y el de tu familia en la comodidad de tu hogar. Servicios de enfermería, inyectología y acompañamiento a domicilio en Medellín y el Valle de Aburrá.">
+<meta property="og:image" content="/img/og-asistmed.jpg">
+<meta property="og:url" content="https://www.asistmed.com/">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="ASISTMED Domicilios">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ASISTMED Domicilios | Cuidado Profesional, Atención Humana">
+<meta name="twitter:description" content="Servicios de salud a domicilio en Medellín y el Valle de Aburrá: inyectología, curaciones, acompañamiento y más.">
+<meta name="twitter:image" content="/img/og-asistmed.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230D6EFD'/%3E%3Cpath d='M32 14 L32 50 M14 32 L50 32' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "ASISTMED Domicilios",
+  "image": "https://www.asistmed.com/img/og-asistmed.jpg",
+  "description": "Servicios profesionales de enfermería, inyectología y acompañamiento a domicilio en Medellín y el Valle de Aburrá.",
+  "url": "https://www.asistmed.com/",
+  "telephone": "+57-300-000-0000",
+  "priceRange": "$$",
+  "areaServed": ["Medellín","Bello","Envigado","Sabaneta","Itagüí","La Estrella","Copacabana","Girardota","Barbosa"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Medellín",
+    "addressRegion": "Antioquia",
+    "addressCountry": "CO"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   ASISTMED — Landing Page Premium
+   Variables globales
+   ========================================================================== */
+:root{
+  --blue: #0D6EFD;
+  --blue-dark: #0A3D91;
+  --blue-soft: #E7F0FF;
+  --white: #FFFFFF;
+  --black: #111111;
+  --gray-light: #F7F9FC;
+  --gray-text: #6B7280;
+
+  --font: 'Poppins', sans-serif;
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+
+  --shadow-sm: 0 4px 16px rgba(17,17,17,0.06);
+  --shadow-md: 0 12px 40px rgba(10,61,145,0.10);
+  --shadow-lg: 0 24px 60px rgba(10,61,145,0.16);
+
+  --gradient-blue: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+  --gradient-soft: linear-gradient(180deg, rgba(13,110,253,0.06) 0%, rgba(255,255,255,0) 100%);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --nav-h: 88px;
+}
+
+*,*::before,*::after{ box-sizing: border-box; margin:0; padding:0; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  font-family: var(--font);
+  color: var(--black);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+img{ max-width:100%; display:block; }
+a{ text-decoration:none; color:inherit; }
+ul{ list-style:none; }
+button{ font-family: var(--font); cursor:pointer; border:none; background:none; }
+input, textarea{ font-family: var(--font); }
+
+.container{
+  width:100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section{
+  padding: 120px 0;
+  position: relative;
+}
+.section--tight{ padding: 96px 0; }
+.section--gray{ background: var(--gray-light); }
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 18px;
+}
+.eyebrow::before{
+  content:"";
+  width: 22px; height: 2px;
+  background: var(--blue);
+  display:inline-block;
+  border-radius: 2px;
+}
+
+.section-title{
+  font-size: clamp(28px, 3.6vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+.section-subtitle{
+  font-size: 17px;
+  color: var(--gray-text);
+  font-weight: 400;
+  max-width: 560px;
+}
+.section-header{ margin-bottom: 64px; }
+.section-header.center{ text-align:center; margin-left:auto; margin-right:auto; }
+.section-header.center .section-subtitle{ margin-left:auto; margin-right:auto; }
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.35s var(--ease);
+  white-space: nowrap;
+}
+.btn-primary{
+  background: var(--gradient-blue);
+  color: var(--white);
+  box-shadow: 0 10px 30px rgba(13,110,253,0.32);
+}
+.btn-primary:hover{ transform: translateY(-3px); box-shadow: 0 16px 40px rgba(13,110,253,0.42); }
+.btn-secondary{
+  background: var(--white);
+  color: var(--blue-dark);
+  border: 1.5px solid rgba(10,61,145,0.16);
+}
+.btn-secondary:hover{ background: var(--blue-soft); transform: translateY(-3px); }
+.btn-whatsapp{
+  background: #25D366;
+  color:#fff;
+  box-shadow: 0 10px 30px rgba(37,211,102,0.35);
+}
+.btn-whatsapp:hover{ transform: translateY(-3px); box-shadow: 0 16px 40px rgba(37,211,102,0.45); }
+.btn svg{ width:18px; height:18px; }
+
+/* ==========================================================================
+   Reveal animations (IntersectionObserver)
+   ========================================================================== */
+.reveal{ opacity:0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+.reveal.zoom{ transform: scale(0.94); }
+.reveal.left{ transform: translateX(-32px); }
+.reveal.right{ transform: translateX(32px); }
+.reveal.in{ opacity:1; transform: translate(0,0) scale(1); }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar{
+  position: fixed;
+  top:0; left:0; right:0;
+  z-index: 1000;
+  height: var(--nav-h);
+  display:flex;
+  align-items:center;
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid rgba(17,17,17,0.06);
+  transition: height 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.navbar.scrolled{
+  height: 68px;
+  box-shadow: 0 4px 24px rgba(17,17,17,0.06);
+}
+.nav-inner{
+  width:100%; max-width:1240px; margin:0 auto; padding: 0 32px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo{
+  display:flex; align-items:center; gap:10px;
+  font-weight: 700; font-size: 20px; letter-spacing:-0.02em; color: var(--black);
+}
+.logo-mark{
+  width:38px; height:38px; border-radius:11px;
+  background: var(--gradient-blue);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 6px 16px rgba(13,110,253,0.35);
+}
+.logo-mark svg{ width:20px; height:20px; }
+.logo span{ color: var(--blue); }
+
+.nav-menu{ display:flex; align-items:center; gap:40px; }
+.nav-menu a{
+  font-size: 14.5px; font-weight:500; color: var(--black);
+  position:relative; padding: 6px 0;
+  transition: color 0.25s var(--ease);
+}
+.nav-menu a::after{
+  content:""; position:absolute; left:0; bottom:0; width:0; height:2px;
+  background: var(--blue); transition: width 0.3s var(--ease);
+}
+.nav-menu a:hover{ color: var(--blue); }
+.nav-menu a:hover::after{ width:100%; }
+
+.nav-actions{ display:flex; align-items:center; gap:16px; }
+.nav-cta{ padding: 12px 24px; font-size:14px; }
+
+.nav-toggle{
+  display:none; flex-direction:column; gap:5px; width:26px; z-index:1100;
+}
+.nav-toggle span{ height:2px; background: var(--black); border-radius:2px; transition: all 0.3s var(--ease); }
+.nav-toggle.open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2){ opacity:0; }
+.nav-toggle.open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  padding-top: var(--nav-h);
+  position:relative;
+  overflow:hidden;
+  background: var(--gradient-soft);
+}
+.hero-shapes{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+.hero-shapes .blob{
+  position:absolute; border-radius:50%;
+  filter: blur(60px);
+  opacity: 0.5;
+}
+.blob-1{ width:520px; height:520px; top:-140px; right:-120px; background: radial-gradient(circle, rgba(13,110,253,0.28), transparent 70%); animation: float1 14s ease-in-out infinite; }
+.blob-2{ width:380px; height:380px; bottom:-100px; left:-100px; background: radial-gradient(circle, rgba(10,61,145,0.16), transparent 70%); animation: float2 16s ease-in-out infinite; }
+@keyframes float1{ 0%,100%{ transform: translateY(0) translateX(0);} 50%{ transform: translateY(30px) translateX(-20px);} }
+@keyframes float2{ 0%,100%{ transform: translateY(0) translateX(0);} 50%{ transform: translateY(-24px) translateX(18px);} }
+
+.hero-grid{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: 60px; align-items:center;
+  width:100%;
+}
+.hero-text .eyebrow{ margin-bottom: 22px; }
+.hero-title{
+  font-size: clamp(40px, 5.4vw, 68px);
+  font-weight:700; letter-spacing:-0.03em; line-height:1.02;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+.hero-title span{
+  background: var(--gradient-blue);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero-subtitle{
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight:500; color: var(--blue-dark); margin-bottom:18px;
+}
+.hero-desc{
+  font-size:17px; color: var(--gray-text); max-width:460px; margin-bottom:38px;
+}
+.hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+
+.hero-visual{ position:relative; overflow: hidden; }
+.hero-image-frame{
+  position:relative;
+  border-radius: var(--radius-lg);
+  overflow:hidden;
+  aspect-ratio: 4/5;
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(160deg,#DCEBFF 0%, #F7F9FC 55%, #EAF2FF 100%);
+}
+.hero-image-frame img{
+  width:100%; height:100%; object-fit:cover;
+}
+.about-image img{
+  width:100%; height:100%; object-fit:cover; border-radius: var(--radius-lg);
+}
+.coverage-map img{
+  width:100%; height:100%; object-fit:cover; border-radius: var(--radius-lg);
+}
+.contact-map img{
+  width:100%; height:100%; object-fit:cover; border-radius: var(--radius-md);
+}
+.service-image img,
+img.service-image{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.testi-avatar img{
+  width:100%; height:100%; object-fit:cover; border-radius:50%;
+}
+.hero-float-card{
+  position:absolute; bottom:28px; left:-36px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(14px);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 18px 22px;
+  display:flex; align-items:center; gap:14px;
+  border: 1px solid rgba(255,255,255,0.6);
+  animation: floatCard 5s ease-in-out infinite;
+}
+@keyframes floatCard{ 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-12px);} }
+.hero-float-card .icon-circle{
+  width:44px; height:44px; border-radius:50%;
+  background: var(--gradient-blue); display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.hero-float-card .icon-circle svg{ width:22px; height:22px; stroke:#fff; }
+.hero-float-card strong{ display:block; font-size:15px; font-weight:600; }
+.hero-float-card small{ color: var(--gray-text); font-size:12.5px; }
+
+.scroll-indicator{
+  position:absolute; bottom: 34px; left:50%; transform: translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  color: var(--gray-text); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+  z-index:2;
+}
+.scroll-indicator .line{ width:1px; height:34px; background: linear-gradient(var(--blue), transparent); animation: scrollLine 1.8s ease-in-out infinite; }
+@keyframes scrollLine{ 0%{ transform: scaleY(0); transform-origin: top;} 50%{ transform: scaleY(1); transform-origin: top;} 51%{ transform-origin: bottom;} 100%{ transform: scaleY(0); transform-origin: bottom;} }
+
+/* ==========================================================================
+   Icon placeholder generator (para imágenes parametrizables)
+   ========================================================================== */
+.img-placeholder{
+  position:relative; overflow:hidden; border-radius: var(--radius-md);
+  background: linear-gradient(150deg,#E7F0FF 0%, #F7F9FC 100%);
+  display:flex; align-items:center; justify-content:center;
+}
+.img-placeholder svg{ width:38%; height:38%; opacity:0.32; }
+
+/* ==========================================================================
+   About / ¿Quiénes somos?
+   ========================================================================== */
+.about-grid{
+  display:grid; grid-template-columns: 0.9fr 1.1fr;
+  gap: 72px; align-items:center;
+}
+.about-visual{ position:relative; padding-bottom: 52px; }
+.about-image{ aspect-ratio: 1/1.05; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+.stats-card{
+  position:absolute; bottom:-36px; right:-28px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 28px;
+  display:grid; grid-template-columns: 1fr 1fr; gap: 22px;
+  width: 300px;
+}
+.stat-item strong{
+  display:block; font-size: 28px; font-weight:700; color: var(--blue);
+  letter-spacing:-0.02em;
+}
+.stat-item small{ font-size:12.5px; color: var(--gray-text); font-weight:500; }
+
+.about-content p{ color: var(--gray-text); margin-bottom:18px; font-size:16px; }
+.about-content .section-title{ margin-bottom:22px; }
+
+/* ==========================================================================
+   Cards genéricas / Mission-Vision-Values / Enfoque / Why
+   ========================================================================== */
+.grid-3{ display:grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+.grid-4{ display:grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+.grid-2{ display:grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+
+.value-card{
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 40px 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(17,17,17,0.04);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.value-card:hover{ transform: translateY(-8px); box-shadow: var(--shadow-md); }
+.card-icon{
+  width:56px; height:56px; border-radius:16px;
+  background: var(--blue-soft);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom: 22px;
+  transition: background 0.35s var(--ease), transform 0.35s var(--ease);
+}
+.card-icon svg{ width:26px; height:26px; stroke: var(--blue); transition: stroke 0.35s var(--ease); }
+.value-card:hover .card-icon{ background: var(--gradient-blue); transform: rotate(-6deg) scale(1.05); }
+.value-card:hover .card-icon svg{ stroke:#fff; }
+.value-card h3{ font-size:19px; font-weight:600; margin-bottom:10px; letter-spacing:-0.01em; }
+.value-card p{ color: var(--gray-text); font-size:14.5px; }
+
+.approach-card{
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 30px 24px;
+  border: 1px solid rgba(17,17,17,0.05);
+  transition: all 0.35s var(--ease);
+}
+.approach-card:hover{ border-color: transparent; box-shadow: var(--shadow-md); transform: translateY(-6px); }
+.approach-card .card-icon{ width:48px; height:48px; margin-bottom:18px; border-radius:13px; }
+.approach-card .card-icon svg{ width:22px; height:22px; }
+.approach-card h4{ font-size:16px; font-weight:600; margin-bottom:8px; }
+.approach-card p{ font-size:13.5px; color: var(--gray-text); }
+
+/* ==========================================================================
+   Servicios — Cards Premium
+   ========================================================================== */
+.services-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 32px; }
+.service-card{
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow:hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(17,17,17,0.04);
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  display:flex; flex-direction:column;
+}
+.service-card:hover{ transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.service-image{ aspect-ratio: 16/11; border-radius:0; overflow:hidden; }
+.service-body{ padding: 28px 26px 30px; display:flex; flex-direction:column; flex:1; }
+.service-body h3{ font-size:19px; font-weight:600; margin-bottom:10px; letter-spacing:-0.01em; }
+.service-body p{ font-size:14px; color: var(--gray-text); margin-bottom:22px; flex:1; }
+.service-link{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:14px; font-weight:600; color: var(--blue);
+  transition: gap 0.3s var(--ease);
+}
+.service-link svg{ width:16px; height:16px; transition: transform 0.3s var(--ease); }
+.service-card:hover .service-link svg{ transform: translateX(4px); }
+
+/* ==========================================================================
+   Por qué elegirnos
+   ========================================================================== */
+.why-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap: 26px; }
+.why-item{ text-align:left; padding: 8px; }
+.why-item .card-icon{ background: transparent; border:2px solid var(--blue-soft); }
+.why-item:hover .card-icon{ background: var(--blue-soft); }
+.why-item:hover .card-icon svg{ stroke: var(--blue); }
+.why-item h4{ font-size:16.5px; font-weight:600; margin-bottom:8px; }
+.why-item p{ font-size:14px; color: var(--gray-text); }
+
+/* ==========================================================================
+   Cobertura
+   ========================================================================== */
+.coverage-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items:center; }
+.coverage-map{
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position:relative;
+  overflow:hidden;
+}
+.coverage-map .pin{
+  position:absolute; width:14px; height:14px; border-radius:50%;
+  background: var(--blue); box-shadow: 0 0 0 6px rgba(13,110,253,0.18);
+  animation: pinPulse 2.4s ease-in-out infinite;
+}
+@keyframes pinPulse{ 0%,100%{ box-shadow: 0 0 0 6px rgba(13,110,253,0.18);} 50%{ box-shadow: 0 0 0 12px rgba(13,110,253,0.08);} }
+.coverage-list{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.coverage-list li{
+  display:flex; align-items:center; gap:12px;
+  background: var(--white);
+  border: 1px solid rgba(17,17,17,0.06);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  font-weight:500; font-size:14.5px;
+  transition: all 0.3s var(--ease);
+}
+.coverage-list li:hover{ border-color: var(--blue); background: var(--blue-soft); transform: translateX(4px); }
+.coverage-list li svg{ width:18px; height:18px; stroke: var(--blue); flex-shrink:0; }
+
+/* ==========================================================================
+   Testimonios
+   ========================================================================== */
+.testi-wrap{ position:relative; max-width: 780px; margin:0 auto; }
+.testi-track{ overflow:hidden; }
+.testi-slides{ display:flex; transition: transform 0.6s var(--ease); }
+.testi-slide{ min-width:100%; padding: 6px; }
+.testi-card{
+  background: var(--white); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: 48px; text-align:center;
+}
+.testi-stars{ display:flex; justify-content:center; gap:4px; margin-bottom:22px; }
+.testi-stars svg{ width:18px; height:18px; fill: #FFB800; stroke:#FFB800; }
+.testi-quote{ font-size:17px; color: var(--black); font-weight:400; margin-bottom:26px; line-height:1.7; }
+.testi-avatar{
+  width:60px; height:60px; border-radius:50%; margin: 0 auto 14px;
+  overflow:hidden;
+  box-shadow: var(--shadow-sm);
+}
+.testi-name{ font-weight:600; font-size:15px; }
+.testi-role{ font-size:13px; color: var(--gray-text); }
+.testi-dots{ display:flex; justify-content:center; gap:9px; margin-top:32px; }
+.testi-dots button{ width:9px; height:9px; border-radius:50%; background: rgba(13,110,253,0.22); transition: all 0.3s var(--ease); }
+.testi-dots button.active{ background: var(--blue); width:26px; border-radius:6px; }
+
+/* ==========================================================================
+   FAQ Accordion
+   ========================================================================== */
+.faq-list{ max-width: 800px; margin: 0 auto; display:flex; flex-direction:column; gap:14px; }
+.faq-item{
+  background: var(--white); border: 1px solid rgba(17,17,17,0.07);
+  border-radius: var(--radius-sm); overflow:hidden;
+  transition: border-color 0.3s var(--ease);
+}
+.faq-item.open{ border-color: var(--blue); }
+.faq-question{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 22px 26px; font-weight:600; font-size:15.5px; width:100%; text-align:left;
+}
+.faq-question .plus{
+  width:26px; height:26px; border-radius:50%; background: var(--blue-soft);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease);
+}
+.faq-item.open .faq-question .plus{ transform: rotate(135deg); background: var(--gradient-blue); }
+.faq-question .plus svg{ width:12px; height:12px; stroke: var(--blue); }
+.faq-item.open .faq-question .plus svg{ stroke:#fff; }
+.faq-answer{ max-height:0; overflow:hidden; transition: max-height 0.4s var(--ease); }
+.faq-answer-inner{ padding: 0 26px 24px; color: var(--gray-text); font-size:14.5px; }
+
+/* ==========================================================================
+   Contacto
+   ========================================================================== */
+.contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.contact-form{
+  background: var(--white); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: 44px;
+}
+.form-row{ margin-bottom: 20px; }
+.form-row label{ display:block; font-size:13.5px; font-weight:600; margin-bottom:8px; }
+.form-row input, .form-row textarea{
+  width:100%; padding: 14px 16px; border-radius: 12px;
+  border: 1.5px solid rgba(17,17,17,0.10); font-size:14.5px;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  background: var(--gray-light);
+}
+.form-row input:focus, .form-row textarea:focus{
+  outline:none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(13,110,253,0.12); background:#fff;
+}
+.form-row textarea{ resize: vertical; min-height:110px; }
+.contact-form .btn{ width:100%; margin-top:6px; }
+.form-status{ margin-top:14px; font-size:13.5px; font-weight:500; min-height:18px; }
+
+.contact-info{ display:flex; flex-direction:column; gap:22px; }
+.info-card{
+  display:flex; gap:18px; align-items:flex-start;
+  background: var(--white); border-radius: var(--radius-md);
+  padding: 24px; box-shadow: var(--shadow-sm);
+}
+.info-card .card-icon{ margin-bottom:0; flex-shrink:0; }
+.info-card h4{ font-size:15.5px; font-weight:600; margin-bottom:4px; }
+.info-card p{ font-size:14px; color: var(--gray-text); }
+.contact-map{ border-radius: var(--radius-md); aspect-ratio: 16/9; overflow:hidden; }
+
+/* ==========================================================================
+   Botón flotante WhatsApp
+   ========================================================================== */
+.float-whatsapp{
+  position: fixed; bottom: 28px; right: 28px; z-index: 900;
+  width: 62px; height: 62px; border-radius:50%;
+  background: #25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 12px 30px rgba(37,211,102,0.45);
+  transition: transform 0.3s var(--ease);
+}
+.float-whatsapp::before{
+  content:""; position:absolute; inset:0; border-radius:50%;
+  background: #25D366; animation: pulseRing 2.2s ease-out infinite; z-index:-1;
+}
+@keyframes pulseRing{ 0%{ transform: scale(1); opacity:0.6;} 100%{ transform: scale(1.9); opacity:0;} }
+.float-whatsapp:hover{ transform: scale(1.08); }
+.float-whatsapp svg{ width:30px; height:30px; fill:#fff; }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer{ background: var(--black); color: rgba(255,255,255,0.72); padding: 80px 0 28px; }
+.footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 50px; margin-bottom:56px; }
+.footer-logo{ display:flex; align-items:center; gap:10px; color:#fff; font-weight:700; font-size:20px; margin-bottom:18px; }
+.footer p{ font-size:14px; line-height:1.7; max-width:280px; }
+.footer h5{ color:#fff; font-size:14.5px; font-weight:600; margin-bottom:20px; letter-spacing:0.02em; }
+.footer-links{ display:flex; flex-direction:column; gap:12px; }
+.footer-links a{ font-size:14px; transition: color 0.3s var(--ease); }
+.footer-links a:hover{ color: var(--blue); }
+.footer-social{ display:flex; gap:12px; margin-top:20px; }
+.footer-social a{
+  width:38px; height:38px; border-radius:50%; background: rgba(255,255,255,0.08);
+  display:flex; align-items:center; justify-content:center; transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.footer-social a:hover{ background: var(--blue); transform: translateY(-3px); }
+.footer-social svg{ width:17px; height:17px; fill:#fff; }
+.footer-bottom{
+  border-top: 1px solid rgba(255,255,255,0.1); padding-top:26px;
+  display:flex; justify-content:space-between; align-items:center; font-size:13px; flex-wrap:wrap; gap:12px;
+}
+.footer-bottom a{ color: rgba(255,255,255,0.5); }
+.footer-bottom a:hover{ color:#fff; }
+
+/* ==========================================================================
+   Utilidades
+   ========================================================================== */
+.skip-link{
+  position:absolute; left:-999px; top:0; background:var(--blue); color:#fff; padding:12px 20px;
+  z-index:2000; border-radius:0 0 8px 0;
+}
+.skip-link:focus{ left:0; }
+:focus-visible{ outline: 3px solid var(--blue); outline-offset:3px; }
+
+.divider-pulse{ width:100%; height:40px; display:flex; align-items:center; justify-content:center; opacity:0.5; }
+.divider-pulse svg{ width:180px; height:24px; stroke: var(--blue); }
+</style>
+
+<link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <h1 class="logo">ASISTMED</h1>
-      <nav class="nav">
-        <a href="/" class="nav-link active">Inicio</a>
-      </nav>
+
+<a href="#main" class="skip-link">Saltar al contenido principal</a>
+
+<!-- ==========================================================================
+     NAVBAR
+     ========================================================================== -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#inicio" class="logo" aria-label="ASISTMED Domicilios - Inicio">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg>
+      </span>
+      ASIST<span>MED</span>
+    </a>
+
+    <nav class="nav-menu" aria-label="Navegación principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#cobertura">Cobertura</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta" aria-label="Escribir por WhatsApp">
+        <svg viewBox="0 0 32 32" fill="#fff"><path d="M16.001 3C9.383 3 4 8.383 4 15.001c0 2.386.7 4.61 1.902 6.484L4 29l7.727-1.868a11.94 11.94 0 0 0 4.274.786h.005c6.618 0 12-5.383 12-12.001C28.006 8.383 22.62 3 16.001 3zm0 21.9a9.86 9.86 0 0 1-5.03-1.377l-.36-.214-3.653.883.913-3.559-.235-.366a9.86 9.86 0 0 1-1.53-5.266c0-5.462 4.442-9.902 9.9-9.902 5.462 0 9.9 4.44 9.9 9.902-.002 5.46-4.442 9.899-9.905 9.899zm5.42-7.41c-.297-.148-1.758-.867-2.03-.966-.272-.098-.47-.148-.667.148-.198.297-.766.966-.94 1.164-.173.198-.346.223-.643.075-.297-.148-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.65-2.057-.174-.297-.02-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.667-1.608-.914-2.202-.24-.578-.485-.5-.667-.51l-.567-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.478 0 1.46 1.065 2.872 1.213 3.07.148.198 2.096 3.2 5.08 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.086 1.758-.719 2.006-1.412.248-.694.248-1.288.174-1.412-.074-.124-.272-.198-.57-.347z"/></svg>
+        WhatsApp
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
+  </div>
 
-  <main class="main">
-    <section class="hero">
-      <div class="container">
-        <h2>Bienvenido a ASISTMED</h2>
-        <p>Sistema de asistencia médica. Gestiona pacientes, citas y atención de forma sencilla.</p>
-        <a href="#" class="btn">Comenzar</a>
+  <nav class="nav-mobile" id="navMobile" aria-label="Navegación móvil">
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#cobertura">Cobertura</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#faq">Preguntas</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin-top:12px;">Escribir por WhatsApp</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ==========================================================================
+     HERO
+     ========================================================================== -->
+<section class="hero" id="inicio">
+  <div class="hero-shapes" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="container hero-grid">
+    <div class="hero-text reveal left in">
+      <p class="eyebrow">Cuidado de salud a domicilio</p>
+      <h1 class="hero-title">ASIST<span>MED</span></h1>
+      <p class="hero-subtitle">Cuidado Profesional, Atención Humana</p>
+      <p class="hero-desc">Tu bienestar y el de tu familia en la comodidad de tu hogar. Personal de salud calificado, disponible cuando lo necesitas.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-primary">
+          Solicitar Atención
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg viewBox="0 0 32 32" fill="#fff"><path d="M16.001 3C9.383 3 4 8.383 4 15.001c0 2.386.7 4.61 1.902 6.484L4 29l7.727-1.868a11.94 11.94 0 0 0 4.274.786h.005c6.618 0 12-5.383 12-12.001C28.006 8.383 22.62 3 16.001 3zm0 21.9a9.86 9.86 0 0 1-5.03-1.377l-.36-.214-3.653.883.913-3.559-.235-.366a9.86 9.86 0 0 1-1.53-5.266c0-5.462 4.442-9.902 9.9-9.902 5.462 0 9.9 4.44 9.9 9.902-.002 5.46-4.442 9.899-9.905 9.899z"/></svg>
+          WhatsApp
+        </a>
       </div>
-    </section>
-
-    <section class="features">
-      <div class="container">
-        <div class="feature-card">
-          <h3>Pacientes</h3>
-          <p>Registra y administra la información de tus pacientes.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Citas</h3>
-          <p>Organiza y controla las citas médicas del día.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Historial</h3>
-          <p>Consulta el historial clínico de cada paciente.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 ASISTMED. Todos los derechos reservados.</p>
     </div>
-  </footer>
+
+    <div class="hero-visual reveal right in">
+      <div class="hero-image-frame">
+        <img src="/img/hero.jpg" alt="Profesional de salud brindando atención domiciliaria" width="640" height="800" fetchpriority="high">
+      </div>
+      <div class="hero-float-card">
+        <span class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </span>
+        <span>
+          <strong>Atención 24/7</strong>
+          <small>Personal calificado y verificado</small>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <a href="#nosotros" class="scroll-indicator" aria-label="Bajar a la siguiente sección">
+    <span>Descubre más</span>
+    <span class="line"></span>
+  </a>
+</section>
+
+<!-- ==========================================================================
+     ¿QUIÉNES SOMOS?
+     ========================================================================== -->
+<section class="section" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-visual reveal left">
+      <div class="about-image">
+        <img src="/img/about.jpg" alt="Equipo de ASISTMED brindando atención domiciliaria" loading="lazy" width="560" height="590">
+      </div>
+      <div class="stats-card" id="statsCard">
+        <div class="stat-item">
+          <strong class="counter" data-target="1200" data-suffix="+">0</strong>
+          <small>Pacientes atendidos</small>
+        </div>
+        <div class="stat-item">
+          <strong class="counter" data-target="12" data-suffix="">0</strong>
+          <small>Servicios</small>
+        </div>
+        <div class="stat-item">
+          <strong class="counter" data-target="9" data-suffix="">0</strong>
+          <small>Municipios de cobertura</small>
+        </div>
+        <div class="stat-item">
+          <strong class="counter" data-target="8" data-suffix="">0</strong>
+          <small>Años de experiencia</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content reveal right">
+      <p class="eyebrow">¿Quiénes somos?</p>
+      <h2 class="section-title">Cuidado profesional con calidez humana, en tu propio hogar</h2>
+      <p>En ASISTMED Domicilios creemos que la recuperación y el bienestar ocurren mejor en un entorno familiar. Por eso reunimos un equipo de profesionales de la salud —enfermeros, auxiliares y cuidadores— formados para brindar atención segura, cálida y personalizada.</p>
+      <p>Acompañamos a adultos mayores, personas en recuperación y familias que necesitan tranquilidad, con protocolos claros, seguimiento constante y comunicación permanente con los familiares responsables.</p>
+      <a href="#servicios" class="btn btn-secondary">Conocer nuestros servicios</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider-pulse" aria-hidden="true">
+  <svg viewBox="0 0 200 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M0 12h50l10-9 12 18 10-14 8 10 10-5h100"/></svg>
+</div>
+
+<!-- ==========================================================================
+     MISIÓN · VISIÓN · VALORES
+     ========================================================================== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header center reveal">
+      <p class="eyebrow" style="justify-content:center;">Nuestros principios</p>
+      <h2 class="section-title">Misión, Visión y Valores</h2>
+      <p class="section-subtitle">Los pilares que guían cada visita, cada cuidado y cada decisión que tomamos.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="value-card reveal">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.8 6.5 19.5l1-6.2L3 8.9 9 8z"/></svg>
+        </div>
+        <h3>Misión</h3>
+        <p>Brindar servicios de salud a domicilio con altos estándares de calidad, seguridad y calidez, mejorando la calidad de vida de nuestros pacientes y la tranquilidad de sus familias.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/></svg>
+        </div>
+        <h3>Visión</h3>
+        <p>Ser la empresa de referencia en cuidado domiciliario en el Valle de Aburrá, reconocida por la excelencia humana y profesional de nuestro equipo.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Valores</h3>
+        <p>Respeto, empatía, responsabilidad y excelencia. Tratamos a cada paciente como si fuera parte de nuestra propia familia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     NUESTRO ENFOQUE
+     ========================================================================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <p class="eyebrow" style="justify-content:center;">Cómo trabajamos</p>
+      <h2 class="section-title">Nuestro Enfoque</h2>
+      <p class="section-subtitle">Un método integral que cuida cada detalle del proceso de atención.</p>
+    </div>
+
+    <div class="grid-4" id="approachGrid"></div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SERVICIOS
+     ========================================================================== -->
+<section class="section section--gray" id="servicios">
+  <div class="container">
+    <div class="section-header center reveal">
+      <p class="eyebrow" style="justify-content:center;">Lo que hacemos</p>
+      <h2 class="section-title">Servicios de Cuidado a Domicilio</h2>
+      <p class="section-subtitle">Programas diseñados para cada etapa y necesidad, ejecutados por profesionales certificados.</p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     POR QUÉ ELEGIRNOS
+     ========================================================================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <p class="eyebrow" style="justify-content:center;">Nuestro compromiso</p>
+      <h2 class="section-title">Por Qué Elegirnos</h2>
+      <p class="section-subtitle">Razones por las que las familias del Valle de Aburrá confían en ASISTMED.</p>
+    </div>
+
+    <div class="why-grid" id="whyGrid"></div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     COBERTURA
+     ========================================================================== -->
+<section class="section section--gray" id="cobertura">
+  <div class="container coverage-grid">
+    <div class="reveal left">
+      <p class="eyebrow">Zona de servicio</p>
+      <h2 class="section-title">Cobertura en el Valle de Aburrá</h2>
+      <p class="section-subtitle" style="margin-bottom:32px;">Atendemos en los siguientes municipios, con desplazamiento puntual y seguro de nuestro personal.</p>
+      <ul class="coverage-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Medellín</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Bello</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Envigado</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Sabaneta</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Itagüí</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>La Estrella</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Copacabana</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Girardota</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Barbosa</li>
+      </ul>
+    </div>
+
+    <div class="coverage-map reveal right">
+      <img src="/img/coverage.jpg" alt="Mapa de cobertura de ASISTMED en el Valle de Aburrá" loading="lazy" width="600" height="600">
+      <div class="pin" style="top:38%; left:46%;"></div>
+      <div class="pin" style="top:52%; left:58%; animation-delay:0.6s;"></div>
+      <div class="pin" style="top:64%; left:40%; animation-delay:1.2s;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     TESTIMONIOS
+     ========================================================================== -->
+<section class="section" id="testimonios">
+  <div class="container">
+    <div class="section-header center reveal">
+      <p class="eyebrow" style="justify-content:center;">Historias reales</p>
+      <h2 class="section-title">Lo Que Dicen Nuestras Familias</h2>
+    </div>
+
+    <div class="testi-wrap reveal">
+      <div class="testi-track">
+        <div class="testi-slides" id="testiSlides"></div>
+      </div>
+      <div class="testi-dots" id="testiDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     FAQ
+     ========================================================================== -->
+<section class="section section--gray" id="faq">
+  <div class="container">
+    <div class="section-header center reveal">
+      <p class="eyebrow" style="justify-content:center;">Resolvemos tus dudas</p>
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+    </div>
+
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     CONTACTO
+     ========================================================================== -->
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section-header center reveal">
+      <p class="eyebrow" style="justify-content:center;">Hablemos</p>
+      <h2 class="section-title">Solicita tu Servicio</h2>
+      <p class="section-subtitle">Cuéntanos qué necesitas y te contactaremos en menos de 24 horas.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="contact-form reveal left" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" required autocomplete="tel">
+        </div>
+        <div class="form-row">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué tipo de atención necesitas..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Enviar Solicitud
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+
+      <div class="contact-info reveal right">
+        <div class="info-card">
+          <span class="card-icon" style="margin-bottom:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <div><h4>Teléfono / WhatsApp</h4><p>+57 300 000 0000</p></div>
+        </div>
+        <div class="info-card">
+          <span class="card-icon" style="margin-bottom:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" stroke="none"/><path d="M22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+          </span>
+          <div><h4>Correo electrónico</h4><p>contacto@asistmed.com</p></div>
+        </div>
+        <div class="info-card">
+          <span class="card-icon" style="margin-bottom:0;">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <div><h4>Zona de atención</h4><p>Medellín y Valle de Aburrá</p></div>
+        </div>
+        <div class="contact-map">
+          <img src="/img/contact-map.jpg" alt="Ubicación de ASISTMED en Medellín" loading="lazy" width="800" height="450">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================================
+     BOTÓN FLOTANTE WHATSAPP
+     ========================================================================== -->
+<a href="https://wa.me/573000000000" target="_blank" rel="noopener" class="float-whatsapp" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.001 3C9.383 3 4 8.383 4 15.001c0 2.386.7 4.61 1.902 6.484L4 29l7.727-1.868a11.94 11.94 0 0 0 4.274.786h.005c6.618 0 12-5.383 12-12.001C28.006 8.383 22.62 3 16.001 3zm0 21.9a9.86 9.86 0 0 1-5.03-1.377l-.36-.214-3.653.883.913-3.559-.235-.366a9.86 9.86 0 0 1-1.53-5.266c0-5.462 4.442-9.902 9.9-9.902 5.462 0 9.9 4.44 9.9 9.902-.002 5.46-4.442 9.899-9.905 9.899zm5.42-7.41c-.297-.148-1.758-.867-2.03-.966-.272-.098-.47-.148-.667.148-.198.297-.766.966-.94 1.164-.173.198-.346.223-.643.075-.297-.148-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.65-2.057-.174-.297-.02-.457.13-.605.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.148-.667-1.608-.914-2.202-.24-.578-.485-.5-.667-.51l-.567-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.478 0 1.46 1.065 2.872 1.213 3.07.148.198 2.096 3.2 5.08 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.086 1.758-.719 2.006-1.412.248-.694.248-1.288.174-1.412-.074-.124-.272-.198-.57-.347z"/></svg>
+</a>
+
+<!-- ==========================================================================
+     FOOTER
+     ========================================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg>
+          </span>
+          ASISTMED
+        </div>
+        <p>Cuidado profesional de salud a domicilio, con atención humana, en Medellín y el Valle de Aburrá.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.001 3C9.383 3 4 8.383 4 15.001c0 2.386.7 4.61 1.902 6.484L4 29l7.727-1.868a11.94 11.94 0 0 0 4.274.786h.005c6.618 0 12-5.383 12-12.001C28.006 8.383 22.62 3 16.001 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Enlaces</h5>
+        <div class="footer-links">
+          <a href="#nosotros">Nosotros</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#testimonios">Testimonios</a>
+          <a href="#faq">Preguntas</a>
+        </div>
+      </div>
+      <div>
+        <h5>Cobertura</h5>
+        <div class="footer-links">
+          <a href="#cobertura">Medellín</a>
+          <a href="#cobertura">Envigado / Sabaneta</a>
+          <a href="#cobertura">Itagüí / La Estrella</a>
+          <a href="#cobertura">Bello / Copacabana</a>
+        </div>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <div class="footer-links">
+          <a href="https://wa.me/573000000000">+57 300 000 0000</a>
+          <a href="mailto:contacto@asistmed.com">contacto@asistmed.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> ASISTMED Domicilios. Todos los derechos reservados.</span>
+      <span><a href="#">Política de privacidad</a> · <a href="#">Términos de uso</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ==========================================================================
+   DATOS DE LA PÁGINA
+   Objeto centralizado — pensado para reemplazarse a futuro por datos
+   provenientes de una API / base de datos (MySQL) vía Express.
+   ========================================================================== */
+const ASISTMED_DATA = {
+  whatsapp: "573000000000",
+
+  iconos: {
+    enfermera: '<path d="M12 2a4 4 0 0 0-4 4v2a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/><path d="M9 14v3M15 14v3"/>',
+    jeringa: '<path d="M18 2l4 4M11 13l-6 6M14 6l4 4M4 20l3-3M8 14l6-6"/>',
+    pastilla: '<rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="M8 8l8 8"/>',
+    curacion: '<path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v8M8 12h8"/>',
+    balanza: '<path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/>',
+    manos: '<path d="M11 21H7a2 2 0 0 1-2-2v-4M7 15l4-4 3 3 5-5"/><path d="M15 5l4 4-4 4"/>',
+    banio: '<path d="M4 12h16M6 12V6a2 2 0 0 1 2-2h1M6 12v8a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8"/>',
+    movilidad: '<circle cx="18" cy="18" r="3"/><circle cx="6" cy="18" r="1"/><path d="M6 18l4-9h4l3 5h-4"/>',
+    cerebro: '<path d="M12 4a4 4 0 0 0-4 4 3 3 0 0 0-2 5 3 3 0 0 0 2 5h8a3 3 0 0 0 2-5 3 3 0 0 0-2-5 4 4 0 0 0-4-4z"/>',
+    fisico: '<path d="M6 8v8M18 8v8M2 12h4M18 12h4M6 12h12"/>',
+    ludico: '<circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><path d="M8 15c1 1 2 1.5 4 1.5s3-.5 4-1.5"/>',
+    peptido: '<path d="M4 20c4-8 8 4 12-4s4-8 4-8M4 8s4-8 8-4"/>',
+    reloj: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',
+    escudo: '<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/>',
+    corazon: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
+    check: '<path d="M20 6L9 17l-5-5"/>',
+    estrella: '<path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.8 6.5 19.5l1-6.2L3 8.9 9 8z"/>',
+    grupo: '<circle cx="9" cy="7" r="4"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="19" cy="8" r="3"/><path d="M17 21v-1a3 3 0 0 0-2-2.83"/>',
+    docs: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/>'
+  },
+
+  enfoque: [
+    { icono:"escudo", titulo:"Evaluación inicial", desc:"Valoración de salud completa antes de iniciar el servicio." },
+    { icono:"docs", titulo:"Plan personalizado", desc:"Diseñamos un plan de cuidado a la medida de cada paciente." },
+    { icono:"enfermera", titulo:"Personal calificado", desc:"Enfermeros y auxiliares con formación y experiencia certificada." },
+    { icono:"reloj", titulo:"Puntualidad", desc:"Visitas programadas y cumplidas con precisión horaria." },
+    { icono:"corazon", titulo:"Atención cálida", desc:"Trato humano, respetuoso y cercano en cada visita." },
+    { icono:"grupo", titulo:"Comunicación con la familia", desc:"Reportes constantes sobre el estado del paciente." },
+    { icono:"check", titulo:"Seguimiento continuo", desc:"Supervisión permanente de la evolución del paciente." },
+    { icono:"escudo", titulo:"Bioseguridad", desc:"Protocolos estrictos de higiene y manejo de insumos médicos." }
+  ],
+
+  servicios: [
+    { icono:"manos", imagen:"/img/service-01.jpg", titulo:"Cuidado Integral Adulto Mayor", desc:"Acompañamiento completo para el bienestar diario de personas mayores en su hogar." },
+    { icono:"jeringa", imagen:"/img/service-02.jpg", titulo:"Inyectología", desc:"Aplicación segura de inyecciones intramusculares, subcutáneas e intravenosas." },
+    { icono:"pastilla", imagen:"/img/service-03.jpg", titulo:"Aplicación de Medicamentos", desc:"Suministro controlado de medicamentos según prescripción médica." },
+    { icono:"curacion", imagen:"/img/service-04.jpg", titulo:"Curaciones", desc:"Manejo profesional de heridas, úlceras y procedimientos post-quirúrgicos." },
+    { icono:"balanza", imagen:"/img/service-05.jpg", titulo:"Tratamientos Sobrepeso", desc:"Programas de acompañamiento nutricional y seguimiento de peso." },
+    { icono:"corazon", imagen:"/img/service-06.jpg", titulo:"Acompañamiento", desc:"Compañía permanente para pacientes que requieren supervisión continua." },
+    { icono:"banio", imagen:"/img/service-07.jpg", titulo:"Acompañamiento en Baño", desc:"Asistencia respetuosa en higiene personal diaria." },
+    { icono:"movilidad", imagen:"/img/service-08.jpg", titulo:"Asistencia en Movilidad", desc:"Apoyo para desplazamientos seguros dentro y fuera del hogar." },
+    { icono:"cerebro", imagen:"/img/service-09.jpg", titulo:"Estimulación Cognitiva", desc:"Actividades diseñadas para mantener activa la mente." },
+    { icono:"fisico", imagen:"/img/service-10.jpg", titulo:"Actividades Físicas", desc:"Rutinas de movimiento adaptadas a cada capacidad física." },
+    { icono:"ludico", imagen:"/img/service-11.jpg", titulo:"Actividades Lúdicas", desc:"Espacios de entretenimiento y esparcimiento personalizado." },
+    { icono:"peptido", imagen:"/img/service-12.jpg", titulo:"Programa de Optimización y Terapias con Péptidos", desc:"Programa integral de bienestar y terapias avanzadas supervisado por profesionales." }
+  ],
+
+  porQueElegirnos: [
+    { icono:"enfermera", titulo:"Personal certificado", desc:"Profesionales de la salud verificados y en constante formación." },
+    { icono:"reloj", titulo:"Disponibilidad flexible", desc:"Horarios adaptados a las necesidades de cada familia." },
+    { icono:"escudo", titulo:"Protocolos de bioseguridad", desc:"Cumplimiento estricto de normas de higiene y seguridad." },
+    { icono:"grupo", titulo:"Acompañamiento familiar", desc:"Te mantenemos informado en cada paso del proceso." },
+    { icono:"corazon", titulo:"Atención humanizada", desc:"Cuidamos con respeto, empatía y calidez genuina." },
+    { icono:"check", titulo:"Seguimiento clínico", desc:"Registro y control de la evolución de cada paciente." },
+    { icono:"movilidad", titulo:"Cobertura amplia", desc:"Presencia en 9 municipios del Valle de Aburrá." },
+    { icono:"estrella", titulo:"Experiencia comprobada", desc:"Más de 8 años acompañando familias en Antioquia." }
+  ],
+
+  testimonios: [
+    { nombre:"María Elena Restrepo", rol:"Familiar de paciente — Envigado", texto:"El acompañamiento que le dieron a mi mamá fue excepcional. Puntuales, cálidos y muy profesionales en cada visita.", inicial:"M", foto:"/img/avatar-1.jpg" },
+    { nombre:"Jorge Iván Muñoz", rol:"Paciente — Medellín", texto:"Las curaciones post-operatorias las hicieron con muchísimo cuidado. Me sentí en manos seguras todo el proceso.", inicial:"J", foto:"/img/avatar-2.jpg" },
+    { nombre:"Luz Adriana Gómez", rol:"Familiar de paciente — Sabaneta", texto:"La tranquilidad de saber que mi papá está bien cuidado en casa no tiene precio. Gracias ASISTMED.", inicial:"L", foto:"/img/avatar-3.jpg" }
+  ],
+
+  faq: [
+    { q:"¿En qué zonas prestan el servicio?", r:"Atendemos en Medellín, Bello, Envigado, Sabaneta, Itagüí, La Estrella, Copacabana, Girardota y Barbosa." },
+    { q:"¿El personal está certificado?", r:"Sí, todo nuestro equipo de enfermería y cuidadores cuenta con formación certificada y verificación de antecedentes." },
+    { q:"¿Puedo solicitar un servicio por horas?", r:"Sí, contamos con planes por horas, por día o programas de acompañamiento permanente según la necesidad del paciente." },
+    { q:"¿Cómo se agenda una visita?", r:"Puedes escribirnos por WhatsApp o diligenciar el formulario de contacto y te confirmaremos disponibilidad en menos de 24 horas." },
+    { q:"¿Manejan servicios de urgencia?", r:"Contamos con disponibilidad ampliada para solicitudes prioritarias; contáctanos directamente para evaluar el caso." }
+  ]
+};
+
+/* ==========================================================================
+   RENDERIZADO DINÁMICO
+   ========================================================================== */
+function icon(name, extraAttrs=''){
+  return `<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ${extraAttrs}>${ASISTMED_DATA.iconos[name] || ''}</svg>`;
+}
+
+function renderApproach(){
+  const grid = document.getElementById('approachGrid');
+  grid.innerHTML = ASISTMED_DATA.enfoque.map(item => `
+    <div class="approach-card reveal zoom">
+      <span class="card-icon">${icon(item.icono)}</span>
+      <h4>${item.titulo}</h4>
+      <p>${item.desc}</p>
+    </div>
+  `).join('');
+}
+
+function renderServices(){
+  const grid = document.getElementById('servicesGrid');
+  grid.innerHTML = ASISTMED_DATA.servicios.map(item => `
+    <article class="service-card reveal zoom">
+      <img src="${item.imagen}" alt="${item.titulo}" class="service-image" loading="lazy" width="400" height="260">
+      <div class="service-body">
+        <h3>${item.titulo}</h3>
+        <p>${item.desc}</p>
+        <a href="#contacto" class="service-link">
+          Ver más
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </article>
+  `).join('');
+}
+
+function renderWhy(){
+  const grid = document.getElementById('whyGrid');
+  grid.innerHTML = ASISTMED_DATA.porQueElegirnos.map(item => `
+    <div class="why-item reveal">
+      <span class="card-icon">${icon(item.icono)}</span>
+      <h4>${item.titulo}</h4>
+      <p>${item.desc}</p>
+    </div>
+  `).join('');
+}
+
+function renderTestimonials(){
+  const slides = document.getElementById('testiSlides');
+  const dots = document.getElementById('testiDots');
+  slides.innerHTML = ASISTMED_DATA.testimonios.map(t => `
+    <div class="testi-slide">
+      <div class="testi-card">
+        <div class="testi-stars">${'<svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2L12 16.8 6.5 19.5l1-6.2L3 8.9 9 8z"/></svg>'.repeat(5)}</div>
+        <p class="testi-quote">"${t.texto}"</p>
+        <div class="testi-avatar"><img src="${t.foto}" alt="Foto de ${t.nombre}" loading="lazy" width="60" height="60"></div>
+        <p class="testi-name">${t.nombre}</p>
+        <p class="testi-role">${t.rol}</p>
+      </div>
+    </div>
+  `).join('');
+  dots.innerHTML = ASISTMED_DATA.testimonios.map((_, i) => `<button aria-label="Testimonio ${i+1}" data-index="${i}" class="${i===0?'active':''}"></button>`).join('');
+}
+
+function renderFaq(){
+  const list = document.getElementById('faqList');
+  list.innerHTML = ASISTMED_DATA.faq.map((item, i) => `
+    <div class="faq-item reveal" data-index="${i}">
+      <button class="faq-question" aria-expanded="false">
+        ${item.q}
+        <span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">${item.r}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ==========================================================================
+   INTERACCIONES
+   ========================================================================== */
+function initNavbar(){
+  const nav = document.getElementById('navbar');
+  const toggle = document.getElementById('navToggle');
+  const mobile = document.getElementById('navMobile');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  toggle.addEventListener('click', () => {
+    const open = toggle.classList.toggle('open');
+    mobile.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+
+  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    mobile.classList.remove('open');
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+}
+
+function initReveal(){
+  const items = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  items.forEach(el => observer.observe(el));
+}
+
+function initCounters(){
+  const counters = document.querySelectorAll('.counter');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1600;
+        const start = performance.now();
+        function tick(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target).toLocaleString('es-CO') + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+          else el.textContent = target.toLocaleString('es-CO') + suffix;
+        }
+        requestAnimationFrame(tick);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(c => observer.observe(c));
+}
+
+function initTestimonials(){
+  const track = document.getElementById('testiSlides');
+  const dots = document.querySelectorAll('#testiDots button');
+  let index = 0;
+  const total = ASISTMED_DATA.testimonios.length;
+
+  function goTo(i){
+    index = (i + total) % total;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, di) => d.classList.toggle('active', di === index));
+  }
+
+  dots.forEach(d => d.addEventListener('click', () => { goTo(parseInt(d.dataset.index, 10)); resetAuto(); }));
+
+  let auto = setInterval(() => goTo(index + 1), 5500);
+  function resetAuto(){ clearInterval(auto); auto = setInterval(() => goTo(index + 1), 5500); }
+}
+
+function initFaq(){
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-answer').style.maxHeight = null;
+        other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen){
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+}
+
+function initForm(){
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()){
+      status.textContent = 'Por favor completa todos los campos correctamente.';
+      status.style.color = '#DC2626';
+      return;
+    }
+    // Preparado para conectarse a un endpoint Express / base de datos MySQL.
+    status.textContent = '¡Gracias! Hemos recibido tu solicitud, te contactaremos pronto.';
+    status.style.color = '#0D6EFD';
+    form.reset();
+  });
+}
+
+function initYear(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderApproach();
+  renderServices();
+  renderWhy();
+  renderTestimonials();
+  renderFaq();
+
+  initNavbar();
+  initReveal();
+  initCounters();
+  initTestimonials();
+  initFaq();
+  initForm();
+  initYear();
+
+  // Vuelve a activar el observer de reveal sobre los nodos recién inyectados
+  initReveal();
+});
+</script>
 </body>
 </html>
