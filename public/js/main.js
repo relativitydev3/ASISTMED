@@ -43,47 +43,53 @@ const ASISTMED_DATA = {
     {
       icono:"manos", imagen:"/img/service-01.jpg", titulo:"Cuidado Integral Adulto Mayor",
       desc:"Acompañamiento completo para el bienestar diario de personas mayores en su hogar.",
-      incluye:["Valoración inicial del estado de salud","Acompañamiento en actividades diarias","Administración de medicamentos","Control de signos vitales","Apoyo en alimentación e hidratación","Comunicación constante con la familia"]
+      incluye:["Cuidado por horas, diurno, nocturno o permanente.","Supervisión y acompañamiento.","Ayuda en la alimentación e hidratación.","Acompañamiento en el baño e higiene personal.","Administración de medicamentos según prescripción médica.","Control de signos vitales.","Prevención de caídas.","Cambios de posición y movilización.","Estimulación cognitiva.","Actividades físicas adaptadas.","Actividades recreativas y lúdicas.","Acompañamiento a citas médicas cuando sea requerido.",]
     },
     {
       icono:"jeringa", imagen:"/img/service-02.jpg", titulo:"Inyectología",
-      desc:"Aplicación segura de inyecciones intramusculares, subcutáneas e intravenosas.",
-      incluye:["Inyecciones intramusculares y subcutáneas","Inyecciones intravenosas según indicación médica","Manejo de insumos estériles","Registro detallado de cada aplicación","Disposición segura del material usado","Profesional certificado en cada visita"]
+      desc:"Administración segura de medicamentos por vía intramuscular, intravenosa, subcutánea e intradérmica, siempre bajo prescripción médica y siguiendo estrictos protocolos de bioseguridad.",
+      incluye:["Aplicación de medicamentos.","Valoración previa del paciente.","Observación posterior al procedimiento.","Atención domiciliaria con personal calificado.",]
     },
     {
       icono:"pastilla", imagen:"/img/service-03.jpg", titulo:"Aplicación de Medicamentos",
-      desc:"Suministro controlado de medicamentos según prescripción médica.",
-      incluye:["Administración según horario prescrito","Control de dosis y vía de administración","Registro de medicación suministrada","Verificación de la prescripción médica","Alertas a la familia sobre cambios","Seguimiento de reacciones adversas"]
+      desc:"Administración responsable de medicamentos formulados por el médico, garantizando el cumplimiento del tratamiento en la comodidad del hogar.",
+      incluye:["Administración según horario prescrito",]
     },
     {
       icono:"curacion", imagen:"/img/service-04.jpg", titulo:"Curaciones",
-      desc:"Manejo profesional de heridas, úlceras y procedimientos post-quirúrgicos.",
-      incluye:["Limpieza y desinfección de heridas","Cambio de apósitos y vendajes","Manejo de úlceras por presión","Seguimiento post-quirúrgico","Evaluación de signos de infección","Educación al paciente y a la familia"]
+      desc:"Realizamos curaciones simples y especializadas para favorecer la cicatrización, prevenir infecciones y acelerar el proceso de recuper ación.",
+      incluye:["Curaciones de heridas.","Cambio de apósitos.","Valoración y seguimiento.","Educación sobre cuidados posteriores.",]
     },
     {
       icono:"balanza", imagen:"/img/service-05.jpg", titulo:"Tratamientos Sobrepeso",
-      desc:"Programas de acompañamiento nutricional y seguimiento de peso.",
-      incluye:["Seguimiento de peso y medidas corporales","Plan de alimentación supervisado","Registro de progreso periódico","Acompañamiento en hábitos saludables","Motivación y apoyo continuo","Coordinación con profesionales de salud"]
+      desc:"Ofrecemos acompañamiento de enfermería para pacientes que reciben tratamientos médicos orientados al control del sobrepeso y la obesidad.",
+      aviso:"Importante: Este servicio se presta únicamente bajo prescripción médica. ASISTMED no formula medicamentos ni reemplaza la valoración del médico tratante.",
+      incluye:["Aplicación de medicamentos prescritos.","Seguimiento de signos vitales.","Educación sobre el tratamiento.","Acompañamiento durante el proceso.","Monitoreo de posibles efectos secundarios.",]
     },
     {
-      icono:"corazon", imagen:"/img/service-06.jpg", titulo:"Acompañamiento",
-      desc:"Compañía permanente para pacientes que requieren supervisión continua.",
+      icono:"corazon", imagen:"/img/service-06.jpg", titulo:"Acompañamiento Domiciliario",
+      desc:"Servicio de cuidado temporal para pacientes que requieren supervisión y apoyo durante algunas horas del día o de la noche.",
       incluye:["Supervisión continua en el hogar","Compañía y contención emocional","Vigilancia de la seguridad del paciente","Apoyo en actividades cotidianas","Reportes periódicos a la familia","Atención respetuosa y humanizada"]
     },
     {
+     
+
       icono:"banio", imagen:"/img/service-07.jpg", titulo:"Acompañamiento en Baño",
       desc:"Asistencia respetuosa en higiene personal diaria.",
-      incluye:["Asistencia en ducha o baño con privacidad","Apoyo en higiene personal diaria","Prevención de caídas en el baño","Cuidado de la piel e hidratación","Uso seguro de elementos de apoyo","Trato digno y respetuoso"]
+      incluye:["Asistencia durante el aseo","higiene personal","Prevención de caídas en el baño","Cuidado de la piel e hidratación","Uso seguro de elementos de apoyo","Trato digno y respetuoso"]
     },
     {
+  
+
       icono:"movilidad", imagen:"/img/service-08.jpg", titulo:"Asistencia en Movilidad",
-      desc:"Apoyo para desplazamientos seguros dentro y fuera del hogar.",
+      desc:"Apoyo en desplazamientos, cambios de posición y movilización dentro del hogar para prevenir caídas y favorecer la independencia.",
       incluye:["Apoyo para caminar dentro del hogar","Traslados seguros cama-silla","Ejercicios de movilidad guiados","Uso correcto de ayudas técnicas","Prevención de caídas","Acompañamiento en desplazamientos cortos"]
     },
     {
+   
       icono:"cerebro", imagen:"/img/service-09.jpg", titulo:"Estimulación Cognitiva",
-      desc:"Actividades diseñadas para mantener activa la mente.",
-      incluye:["Actividades de memoria y atención","Ejercicios de orientación temporal","Juegos y dinámicas mentales","Lectura y conversación guiada","Seguimiento de avances cognitivos","Plan adaptado a cada paciente"]
+      desc:"Actividades diseñadas para mantener activa la mente. Especialmente recomendadas para adultos mayores y pacientes con deterioro cognitivo leve.",
+      incluye:["Actividades de memoria y atención","Concentración","Orientación","Razonamiento",]
     },
     {
       icono:"fisico", imagen:"/img/service-10.jpg", titulo:"Actividades Físicas",
@@ -92,8 +98,8 @@ const ASISTMED_DATA = {
     },
     {
       icono:"ludico", imagen:"/img/service-11.jpg", titulo:"Actividades Lúdicas",
-      desc:"Espacios de entretenimiento y esparcimiento personalizado.",
-      incluye:["Entretenimiento personalizado","Juegos de mesa y manualidades","Música y actividades de recuerdo","Estimulación emocional positiva","Actividades al aire libre (si aplica)","Compañía agradable y motivadora"]
+      desc:"Promovemos el bienestar emocional mediante actividades recreativas que favorecen la integración, la autoestima y una mejor calidad de vida.",
+      incluye:["Juegos de mesa.","Lectura.","Manualidades.","Música.","Conversación guiada.","Dinámicas recreativas."]
     },
     {
       icono:"peptido", imagen:"/img/service-12.jpg", titulo:"Programa de Optimización y Terapias con Péptidos",
@@ -103,14 +109,16 @@ const ASISTMED_DATA = {
   ],
 
   porQueElegirnos: [
-    { icono:"enfermera", titulo:"Personal certificado", desc:"Profesionales de la salud verificados y en constante formación." },
-    { icono:"reloj", titulo:"Disponibilidad flexible", desc:"Horarios adaptados a las necesidades de cada familia." },
-    { icono:"escudo", titulo:"Protocolos de bioseguridad", desc:"Cumplimiento estricto de normas de higiene y seguridad." },
-    { icono:"grupo", titulo:"Acompañamiento familiar", desc:"Te mantenemos informado en cada paso del proceso." },
-    { icono:"corazon", titulo:"Atención humanizada", desc:"Cuidamos con respeto, empatía y calidez genuina." },
-    { icono:"check", titulo:"Seguimiento clínico", desc:"Registro y control de la evolución de cada paciente." },
-    { icono:"movilidad", titulo:"Cobertura amplia", desc:"Presencia en 9 municipios del Valle de Aburrá." },
-    { icono:"estrella", titulo:"Experiencia comprobada", desc:"Más de 8 años acompañando familias en Antioquia." }
+    { icono:"corazon", titulo:"Atención personalizada según las necesidades de cada paciente." },
+    { icono:"enfermera", titulo:"Profesionales y auxiliares de enfermería altamente calificados." },
+    { icono:"manos", titulo:"Atención en la comodidad del hogar." },
+    { icono:"estrella", titulo:"Calidad, seguridad y calidez humana." },
+    { icono:"escudo", titulo:"Cumplimiento de protocolos de bioseguridad." },
+    { icono:"reloj", titulo:"Puntualidad y compromiso." },
+    { icono:"grupo", titulo:"Comunicación permanente con la familia." },
+    { icono:"check", titulo:"Atención integral para pacientes de todas las edades." },
+    { icono:"docs", titulo:"Acompañamiento continuo y seguimiento profesional." },
+    { icono:"reloj", titulo:"Servicios flexibles por horas, jornadas o según requerimiento." }
   ],
 
   testimonios: [
@@ -172,6 +180,7 @@ function openServiceModal(index){
   const iconEl = document.getElementById('serviceModalIcon');
   const title = document.getElementById('serviceModalTitle');
   const desc = document.getElementById('serviceModalDesc');
+  const aviso = document.getElementById('serviceModalAviso');
   const list = document.getElementById('serviceModalList');
   const contactBtn = document.getElementById('serviceModalContact');
   const waBtn = document.getElementById('serviceModalWhatsapp');
@@ -181,6 +190,13 @@ function openServiceModal(index){
   iconEl.innerHTML = icon(service.icono);
   title.textContent = service.titulo;
   desc.textContent = service.desc;
+  if (service.aviso) {
+    aviso.textContent = service.aviso;
+    aviso.hidden = false;
+  } else {
+    aviso.textContent = '';
+    aviso.hidden = true;
+  }
   list.innerHTML = service.incluye.map(item => `
     <li>
       <span class="service-modal__check" aria-hidden="true">${icon('check', 'stroke="#0D6EFD"')}</span>
@@ -240,7 +256,7 @@ function renderWhy(){
     <div class="why-item reveal">
       <span class="card-icon">${icon(item.icono)}</span>
       <h4>${item.titulo}</h4>
-      <p>${item.desc}</p>
+      ${item.desc ? `<p>${item.desc}</p>` : ''}
     </div>
   `).join('');
 }
