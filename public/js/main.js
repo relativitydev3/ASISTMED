@@ -40,18 +40,66 @@ const ASISTMED_DATA = {
   ],
 
   servicios: [
-    { icono:"manos", imagen:"/img/service-01.jpg", titulo:"Cuidado Integral Adulto Mayor", desc:"Acompañamiento completo para el bienestar diario de personas mayores en su hogar." },
-    { icono:"jeringa", imagen:"/img/service-02.jpg", titulo:"Inyectología", desc:"Aplicación segura de inyecciones intramusculares, subcutáneas e intravenosas." },
-    { icono:"pastilla", imagen:"/img/service-03.jpg", titulo:"Aplicación de Medicamentos", desc:"Suministro controlado de medicamentos según prescripción médica." },
-    { icono:"curacion", imagen:"/img/service-04.jpg", titulo:"Curaciones", desc:"Manejo profesional de heridas, úlceras y procedimientos post-quirúrgicos." },
-    { icono:"balanza", imagen:"/img/service-05.jpg", titulo:"Tratamientos Sobrepeso", desc:"Programas de acompañamiento nutricional y seguimiento de peso." },
-    { icono:"corazon", imagen:"/img/service-06.jpg", titulo:"Acompañamiento", desc:"Compañía permanente para pacientes que requieren supervisión continua." },
-    { icono:"banio", imagen:"/img/service-07.jpg", titulo:"Acompañamiento en Baño", desc:"Asistencia respetuosa en higiene personal diaria." },
-    { icono:"movilidad", imagen:"/img/service-08.jpg", titulo:"Asistencia en Movilidad", desc:"Apoyo para desplazamientos seguros dentro y fuera del hogar." },
-    { icono:"cerebro", imagen:"/img/service-09.jpg", titulo:"Estimulación Cognitiva", desc:"Actividades diseñadas para mantener activa la mente." },
-    { icono:"fisico", imagen:"/img/service-10.jpg", titulo:"Actividades Físicas", desc:"Rutinas de movimiento adaptadas a cada capacidad física." },
-    { icono:"ludico", imagen:"/img/service-11.jpg", titulo:"Actividades Lúdicas", desc:"Espacios de entretenimiento y esparcimiento personalizado." },
-    { icono:"peptido", imagen:"/img/service-12.jpg", titulo:"Programa de Optimización y Terapias con Péptidos", desc:"Programa integral de bienestar y terapias avanzadas supervisado por profesionales." }
+    {
+      icono:"manos", imagen:"/img/service-01.jpg", titulo:"Cuidado Integral Adulto Mayor",
+      desc:"Acompañamiento completo para el bienestar diario de personas mayores en su hogar.",
+      incluye:["Valoración inicial del estado de salud","Acompañamiento en actividades diarias","Administración de medicamentos","Control de signos vitales","Apoyo en alimentación e hidratación","Comunicación constante con la familia"]
+    },
+    {
+      icono:"jeringa", imagen:"/img/service-02.jpg", titulo:"Inyectología",
+      desc:"Aplicación segura de inyecciones intramusculares, subcutáneas e intravenosas.",
+      incluye:["Inyecciones intramusculares y subcutáneas","Inyecciones intravenosas según indicación médica","Manejo de insumos estériles","Registro detallado de cada aplicación","Disposición segura del material usado","Profesional certificado en cada visita"]
+    },
+    {
+      icono:"pastilla", imagen:"/img/service-03.jpg", titulo:"Aplicación de Medicamentos",
+      desc:"Suministro controlado de medicamentos según prescripción médica.",
+      incluye:["Administración según horario prescrito","Control de dosis y vía de administración","Registro de medicación suministrada","Verificación de la prescripción médica","Alertas a la familia sobre cambios","Seguimiento de reacciones adversas"]
+    },
+    {
+      icono:"curacion", imagen:"/img/service-04.jpg", titulo:"Curaciones",
+      desc:"Manejo profesional de heridas, úlceras y procedimientos post-quirúrgicos.",
+      incluye:["Limpieza y desinfección de heridas","Cambio de apósitos y vendajes","Manejo de úlceras por presión","Seguimiento post-quirúrgico","Evaluación de signos de infección","Educación al paciente y a la familia"]
+    },
+    {
+      icono:"balanza", imagen:"/img/service-05.jpg", titulo:"Tratamientos Sobrepeso",
+      desc:"Programas de acompañamiento nutricional y seguimiento de peso.",
+      incluye:["Seguimiento de peso y medidas corporales","Plan de alimentación supervisado","Registro de progreso periódico","Acompañamiento en hábitos saludables","Motivación y apoyo continuo","Coordinación con profesionales de salud"]
+    },
+    {
+      icono:"corazon", imagen:"/img/service-06.jpg", titulo:"Acompañamiento",
+      desc:"Compañía permanente para pacientes que requieren supervisión continua.",
+      incluye:["Supervisión continua en el hogar","Compañía y contención emocional","Vigilancia de la seguridad del paciente","Apoyo en actividades cotidianas","Reportes periódicos a la familia","Atención respetuosa y humanizada"]
+    },
+    {
+      icono:"banio", imagen:"/img/service-07.jpg", titulo:"Acompañamiento en Baño",
+      desc:"Asistencia respetuosa en higiene personal diaria.",
+      incluye:["Asistencia en ducha o baño con privacidad","Apoyo en higiene personal diaria","Prevención de caídas en el baño","Cuidado de la piel e hidratación","Uso seguro de elementos de apoyo","Trato digno y respetuoso"]
+    },
+    {
+      icono:"movilidad", imagen:"/img/service-08.jpg", titulo:"Asistencia en Movilidad",
+      desc:"Apoyo para desplazamientos seguros dentro y fuera del hogar.",
+      incluye:["Apoyo para caminar dentro del hogar","Traslados seguros cama-silla","Ejercicios de movilidad guiados","Uso correcto de ayudas técnicas","Prevención de caídas","Acompañamiento en desplazamientos cortos"]
+    },
+    {
+      icono:"cerebro", imagen:"/img/service-09.jpg", titulo:"Estimulación Cognitiva",
+      desc:"Actividades diseñadas para mantener activa la mente.",
+      incluye:["Actividades de memoria y atención","Ejercicios de orientación temporal","Juegos y dinámicas mentales","Lectura y conversación guiada","Seguimiento de avances cognitivos","Plan adaptado a cada paciente"]
+    },
+    {
+      icono:"fisico", imagen:"/img/service-10.jpg", titulo:"Actividades Físicas",
+      desc:"Rutinas de movimiento adaptadas a cada capacidad física.",
+      incluye:["Rutinas adaptadas a la condición del paciente","Ejercicios de flexibilidad y fuerza","Movilización articular supervisada","Caminatas guiadas y seguras","Prevención del sedentarismo","Progresión según capacidades"]
+    },
+    {
+      icono:"ludico", imagen:"/img/service-11.jpg", titulo:"Actividades Lúdicas",
+      desc:"Espacios de entretenimiento y esparcimiento personalizado.",
+      incluye:["Entretenimiento personalizado","Juegos de mesa y manualidades","Música y actividades de recuerdo","Estimulación emocional positiva","Actividades al aire libre (si aplica)","Compañía agradable y motivadora"]
+    },
+    {
+      icono:"peptido", imagen:"/img/service-12.jpg", titulo:"Programa de Optimización y Terapias con Péptidos",
+      desc:"Programa integral de bienestar y terapias avanzadas supervisado por profesionales.",
+      incluye:["Evaluación inicial personalizada","Plan de terapias supervisado","Seguimiento clínico periódico","Educación sobre el tratamiento","Coordinación con el equipo médico","Acompañamiento integral del paciente"]
+    }
   ],
 
   porQueElegirnos: [
@@ -100,19 +148,90 @@ function renderApproach(){
 
 function renderServices(){
   const grid = document.getElementById('servicesGrid');
-  grid.innerHTML = ASISTMED_DATA.servicios.map(item => `
-    <article class="service-card reveal zoom">
+  grid.innerHTML = ASISTMED_DATA.servicios.map((item, i) => `
+    <article class="service-card reveal zoom" data-service-index="${i}" role="button" tabindex="0" aria-label="Ver detalles de ${item.titulo}">
       <img src="${item.imagen}" alt="${item.titulo}" class="service-image" loading="lazy" width="400" height="260">
       <div class="service-body">
         <h3>${item.titulo}</h3>
         <p>${item.desc}</p>
-        <a href="#contacto" class="service-link">
+        <button type="button" class="service-link" data-service-index="${i}">
           Ver más
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
       </div>
     </article>
   `).join('');
+}
+
+function openServiceModal(index){
+  const service = ASISTMED_DATA.servicios[index];
+  if (!service) return;
+
+  const modal = document.getElementById('serviceModal');
+  const img = document.getElementById('serviceModalImg');
+  const iconEl = document.getElementById('serviceModalIcon');
+  const title = document.getElementById('serviceModalTitle');
+  const desc = document.getElementById('serviceModalDesc');
+  const list = document.getElementById('serviceModalList');
+  const contactBtn = document.getElementById('serviceModalContact');
+  const waBtn = document.getElementById('serviceModalWhatsapp');
+
+  img.src = service.imagen;
+  img.alt = service.titulo;
+  iconEl.innerHTML = icon(service.icono);
+  title.textContent = service.titulo;
+  desc.textContent = service.desc;
+  list.innerHTML = service.incluye.map(item => `
+    <li>
+      <span class="service-modal__check" aria-hidden="true">${icon('check', 'stroke="#0D6EFD"')}</span>
+      ${item}
+    </li>
+  `).join('');
+
+  const waText = encodeURIComponent(`Hola, me interesa el servicio: ${service.titulo}`);
+  contactBtn.href = '#contacto';
+  waBtn.href = `https://wa.me/${ASISTMED_DATA.whatsapp}?text=${waText}`;
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  document.getElementById('serviceModalClose').focus();
+}
+
+function closeServiceModal(){
+  const modal = document.getElementById('serviceModal');
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+function initServiceModal(){
+  const modal = document.getElementById('serviceModal');
+  const grid = document.getElementById('servicesGrid');
+
+  grid.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-service-index]');
+    if (!btn) return;
+    e.preventDefault();
+    openServiceModal(parseInt(btn.dataset.serviceIndex, 10));
+  });
+
+  grid.addEventListener('keydown', (e) => {
+    const card = e.target.closest('.service-card[data-service-index]');
+    if (!card || (e.key !== 'Enter' && e.key !== ' ')) return;
+    e.preventDefault();
+    openServiceModal(parseInt(card.dataset.serviceIndex, 10));
+  });
+
+  modal.querySelectorAll('[data-close-modal]').forEach(el => {
+    el.addEventListener('click', closeServiceModal);
+  });
+
+  document.getElementById('serviceModalContact').addEventListener('click', closeServiceModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeServiceModal();
+  });
 }
 
 function renderWhy(){
@@ -302,6 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaq();
   initForm();
   initYear();
+  initServiceModal();
 
   // Vuelve a activar el observer de reveal sobre los nodos recién inyectados
   initReveal();

@@ -274,6 +274,22 @@ body.menu-open {
     padding: 8px 12px;
   }
 
+  .service-modal {
+    padding: 12px;
+  }
+
+  .service-modal__body {
+    padding: 22px 20px 24px;
+  }
+
+  .service-modal__actions {
+    flex-direction: column;
+  }
+
+  .service-modal__actions .btn {
+    width: 100%;
+  }
+
   .nav-mobile {
     padding: 20px;
   }

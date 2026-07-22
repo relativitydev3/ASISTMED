@@ -684,6 +684,7 @@ img.service-image{
   border: 1px solid rgba(17,17,17,0.04);
   transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
   display:flex; flex-direction:column;
+  cursor: pointer;
 }
 .service-card:hover{ transform: translateY(-10px); box-shadow: var(--shadow-lg); }
 .service-image{ aspect-ratio: 16/11; border-radius:0; overflow:hidden; }
@@ -694,9 +695,185 @@ img.service-image{
   display:inline-flex; align-items:center; gap:8px;
   font-size:14px; font-weight:600; color: var(--blue);
   transition: gap 0.3s var(--ease);
+  background: none; border: none; padding: 0; cursor: pointer; font-family: var(--font);
 }
 .service-link svg{ width:16px; height:16px; transition: transform 0.3s var(--ease); }
 .service-card:hover .service-link svg{ transform: translateX(4px); }
+
+/* Modal de servicios */
+body.modal-open{ overflow: hidden; }
+
+.service-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s var(--ease), visibility 0.4s var(--ease);
+}
+.service-modal.open{
+  opacity: 1;
+  visibility: visible;
+}
+
+.service-modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 61, 145, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.service-modal__dialog{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 560px;
+  max-height: min(90vh, 820px);
+  overflow-y: auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 32px 80px rgba(10, 61, 145, 0.22);
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.45s var(--ease);
+}
+.service-modal.open .service-modal__dialog{
+  transform: translateY(0) scale(1);
+}
+
+.service-modal__close{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(17,17,17,0.08);
+  color: var(--black);
+  cursor: pointer;
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+  box-shadow: var(--shadow-sm);
+}
+.service-modal__close:hover{
+  transform: rotate(90deg);
+  background: var(--white);
+}
+.service-modal__close svg{ width: 20px; height: 20px; }
+
+.service-modal__hero{
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.service-modal__hero img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.service-modal__hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 20%, rgba(10,61,145,0.55) 100%);
+}
+.service-modal__icon{
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  margin-bottom: 0;
+  box-shadow: 0 8px 24px rgba(13,110,253,0.25);
+}
+
+.service-modal__body{
+  padding: 28px 32px 32px;
+}
+.service-modal__title{
+  font-size: clamp(22px, 4vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.service-modal__desc{
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--gray-text);
+  margin-bottom: 28px;
+}
+
+.service-modal__includes h3{
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+.service-modal__includes ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.service-modal__includes li{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--black);
+  padding: 12px 14px;
+  background: var(--gray-light);
+  border-radius: 12px;
+  border: 1px solid rgba(13,110,253,0.06);
+  transition: background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.service-modal__includes li:hover{
+  background: var(--blue-soft);
+  transform: translateX(4px);
+}
+.service-modal__check{
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.service-modal__check svg{
+  width: 18px;
+  height: 18px;
+}
+
+.service-modal__actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(17,17,17,0.06);
+}
+.service-modal__actions .btn{
+  flex: 1;
+  min-width: 160px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .service-modal,
+  .service-modal__dialog,
+  .service-modal__includes li{ transition: none; }
+  .service-modal.open .service-modal__dialog{ transform: none; }
+}
 
 /* ==========================================================================
    Por quÃ© elegirnos
