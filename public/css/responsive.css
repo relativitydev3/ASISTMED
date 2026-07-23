@@ -408,7 +408,7 @@ body.menu-open {
   }
 
   .hero-bg-img {
-    object-position: center 48%;
+    object-position: 80% center;
   }
 }
 
@@ -483,19 +483,7 @@ body.menu-open {
   .hero-metric span {
     font-size: 9px;
   }
-
-  .hero-metric strong {
-    font-size: 17px;
-  }
-
-  .hero-metric span {
-    font-size: 10px;
-  }
-
-  .hero-trust li {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
+}
 
   .service-modal {
     padding: 12px;
