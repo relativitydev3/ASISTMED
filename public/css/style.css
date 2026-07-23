@@ -179,6 +179,9 @@ input, textarea{ font-family: var(--font); }
   height: 68px;
   box-shadow: 0 4px 24px rgba(17,17,17,0.06);
 }
+.navbar.scrolled .logo-img{
+  height: 58px;
+}
 .nav-inner{
   width:100%; max-width:1240px; margin:0 auto; padding: 0 32px;
   display:flex; align-items:center; justify-content:space-between;
@@ -187,10 +190,11 @@ input, textarea{ font-family: var(--font); }
   display:flex; align-items:center;
 }
 .logo-img{
-  height: 52px;
+  height: 74px;
   width: auto;
   object-fit: contain;
   display: block;
+  transition: height 0.35s var(--ease);
 }
 .logo-img--footer{
   height: 64px;
@@ -478,6 +482,14 @@ img.service-image,
   gap: 72px; align-items:center;
 }
 .about-visual{ position:relative; padding-bottom: 52px; }
+.about-visual__stack{ position: relative; }
+.about-image__shade{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(10,61,145,0.18) 100%);
+  pointer-events: none;
+  border-radius: inherit;
+}
 .stats-card{
   position:absolute; bottom:-36px; right:-28px;
   background: var(--white);

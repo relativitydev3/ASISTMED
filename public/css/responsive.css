@@ -60,6 +60,20 @@ body.menu-open {
     gap: 48px;
   }
 
+  .about-visual {
+    order: -1;
+    max-width: 520px;
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+
+  .stats-card {
+    position: static;
+    width: 100%;
+    max-width: 360px;
+    margin: 24px auto 0;
+  }
+
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -77,18 +91,6 @@ body.menu-open {
     gap: 36px;
   }
 
-  .stats-card {
-    position: static;
-    width: 100%;
-    max-width: 360px;
-    margin: 24px auto 0;
-  }
-
-  .about-visual {
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
   .coverage-map {
     max-width: 480px;
     margin: 0 auto;
@@ -99,6 +101,14 @@ body.menu-open {
 @media (max-width: 768px) {
   :root {
     --nav-h: 68px;
+  }
+
+  .logo-img {
+    height: 58px;
+  }
+
+  .navbar.scrolled .logo-img {
+    height: 52px;
   }
 
   .container,
@@ -176,6 +186,91 @@ body.menu-open {
 
   .about-image {
     min-height: 280px;
+  }
+
+  /* Quiénes somos — layout móvil editorial */
+  .about-section {
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 55%);
+  }
+
+  .about-grid {
+    gap: 36px;
+  }
+
+  .about-visual {
+    order: -1;
+    max-width: none;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .about-image {
+    aspect-ratio: 4 / 3.2;
+    min-height: 240px;
+    border-radius: 24px;
+    box-shadow: 0 24px 56px rgba(10, 61, 145, 0.14);
+    border: 1px solid rgba(13, 110, 253, 0.08);
+  }
+
+  .about-stats {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: calc(100% - 24px);
+    max-width: none;
+    margin: -36px auto 0;
+    padding: 18px 14px;
+    gap: 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(13, 110, 253, 0.12);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 16px 40px rgba(10, 61, 145, 0.12);
+    z-index: 2;
+  }
+
+  .about-stats .stat-item {
+    text-align: center;
+    padding: 12px 8px;
+    background: var(--gray-light);
+    border-radius: 14px;
+    border: 1px solid rgba(13, 110, 253, 0.06);
+  }
+
+  .about-stats .stat-item strong {
+    font-size: 22px;
+  }
+
+  .about-stats .stat-item small {
+    font-size: 11px;
+    line-height: 1.35;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-content .eyebrow {
+    justify-content: center;
+  }
+
+  .about-content .section-title {
+    font-size: clamp(26px, 7vw, 34px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .about-cta {
+    width: 100%;
+    margin-top: 8px;
   }
 
   .value-card__num {
