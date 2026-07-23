@@ -462,62 +462,17 @@ function initFaq(){
 function initForm(){
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
-  const submitButton = form.querySelector('button[type="submit"]');
-
-  if (!form || !status || !submitButton) return;
-
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     if (!form.checkValidity()){
       status.textContent = 'Por favor completa todos los campos correctamente.';
       status.style.color = '#DC2626';
       return;
     }
-
-    const formData = new FormData(form);
-    const nombre = formData.get('nombre')?.toString().trim() || '';
-    const correo = formData.get('correo')?.toString().trim() || '';
-    const telefono = formData.get('telefono')?.toString().trim() || '';
-    const mensaje = formData.get('mensaje')?.toString().trim() || '';
-
-    formData.append('access_key', 'bfd1f268-385a-45ed-be74-60f176c7a3b3');
-    formData.append('name', nombre);
-    formData.append('email', correo);
-    formData.append('phone', telefono);
-    formData.append('message', mensaje);
-    formData.append('subject', 'Nueva solicitud de contacto - ASISTMED');
-    formData.append('from_name', 'ASISTMED Domicilios');
-
-    const originalText = submitButton.innerHTML;
-    submitButton.disabled = true;
-    submitButton.innerHTML = 'Enviando...';
-    status.textContent = 'Enviando tu solicitud...';
+    // Preparado para conectarse a un endpoint Express / base de datos MySQL.
+    status.textContent = '¡Gracias! Hemos recibido tu solicitud, te contactaremos pronto.';
     status.style.color = '#0D6EFD';
-
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        status.textContent = '¡Gracias! Tu solicitud fue enviada correctamente.';
-        status.style.color = '#0D6EFD';
-        form.reset();
-      } else {
-        status.textContent = data.message || 'No pudimos enviar tu solicitud. Inténtalo de nuevo.';
-        status.style.color = '#DC2626';
-      }
-    } catch (error) {
-      status.textContent = 'Hubo un problema al enviar el formulario. Inténtalo nuevamente.';
-      status.style.color = '#DC2626';
-    } finally {
-      submitButton.disabled = false;
-      submitButton.innerHTML = originalText;
-    }
+    form.reset();
   });
 }
 
