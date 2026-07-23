@@ -381,7 +381,7 @@ body.menu-open {
   }
 
   .hero-bg-img {
-    object-position: center 48%;
+    object-position: 80% center;
   }
 }
 
@@ -395,7 +395,7 @@ body.menu-open {
   }
 
   .hero-bg-img {
-    object-position: center 52%;
+    object-position: 80% center;
   }
 
   .hero-metrics {
