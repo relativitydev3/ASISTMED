@@ -464,7 +464,7 @@ function initForm(){
   const status = document.getElementById('formStatus');
   if (!form || !status) return;
 
-  const accessKey = form.dataset.accessKey;
+  const accessKey = form.dataset.accessKey || 'bfd1f268-385a-45ed-be74-60f176c7a3b3';
   const submitBtn = form.querySelector('#contactSubmitBtn');
   const labelEl = submitBtn?.querySelector('.btn-label');
   const defaultLabel = labelEl?.textContent || 'Enviar Solicitud';
