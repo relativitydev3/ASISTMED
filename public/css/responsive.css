@@ -104,16 +104,28 @@ body.menu-open {
   }
 
   .logo-img {
-    height: 76px;
+    height: 56px;
+    max-width: 100%;
   }
 
   .navbar.scrolled .logo-img {
-    height: 54px;
+    height: 48px;
   }
 
   .container,
   .nav-inner {
-    padding: 0 20px;
+    padding: 0 16px;
+    gap: 8px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .logo {
+    max-width: calc(100% - 40px);
+  }
+
+  .nav-actions {
+    gap: 0;
   }
 
   .section {
