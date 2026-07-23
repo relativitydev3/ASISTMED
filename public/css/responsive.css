@@ -258,6 +258,26 @@ body.menu-open {
   }
 }
 
+@media (max-width: 1024px) {
+  .hero {
+    min-height: 82vh;
+  }
+
+  .hero-bg-img {
+    object-position: center 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 78vh;
+  }
+
+  .hero-bg-img {
+    object-position: center 48%;
+  }
+}
+
 @media (max-width: 480px) {
   .stats-card {
     grid-template-columns: 1fr;
@@ -265,6 +285,10 @@ body.menu-open {
 
   .hero {
     min-height: 72vh;
+  }
+
+  .hero-bg-img {
+    object-position: center 52%;
   }
 
   .hero-metrics {
