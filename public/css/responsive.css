@@ -258,6 +258,33 @@ body.menu-open {
   }
 }
 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    min-height: 74vh;
+  }
+
+  .hero-text {
+    padding: calc(var(--nav-h) + 44px) 28px 72px;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 5.4vw, 52px);
+  }
+
+  .hero-desc {
+    max-width: 580px;
+  }
+
+  .hero-metrics {
+    max-width: 640px;
+    gap: 16px;
+  }
+
+  .hero-bg-img {
+    object-position: center 52%;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero {
     min-height: 82vh;
