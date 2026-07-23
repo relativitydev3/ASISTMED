@@ -462,17 +462,78 @@ function initFaq(){
 function initForm(){
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
-  form.addEventListener('submit', (e) => {
+  if (!form || !status) return;
+
+  const accessKey = form.dataset.accessKey;
+  const submitBtn = form.querySelector('#contactSubmitBtn');
+  const labelEl = submitBtn?.querySelector('.btn-label');
+  const defaultLabel = labelEl?.textContent || 'Enviar Solicitud';
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (!accessKey){
+      status.textContent = 'El formulario no está disponible temporalmente.';
+      status.style.color = '#DC2626';
+      return;
+    }
+
+    if (form.botcheck?.checked){
+      status.textContent = '¡Gracias! Hemos recibido tu solicitud, te contactaremos pronto.';
+      status.style.color = '#0D6EFD';
+      form.reset();
+      return;
+    }
+
     if (!form.checkValidity()){
       status.textContent = 'Por favor completa todos los campos correctamente.';
       status.style.color = '#DC2626';
       return;
     }
-    // Preparado para conectarse a un endpoint Express / base de datos MySQL.
-    status.textContent = '¡Gracias! Hemos recibido tu solicitud, te contactaremos pronto.';
-    status.style.color = '#0D6EFD';
-    form.reset();
+
+    if (submitBtn){
+      submitBtn.disabled = true;
+      if (labelEl) labelEl.textContent = 'Enviando...';
+    }
+    status.textContent = '';
+    status.style.color = '';
+
+    const formData = new FormData();
+    formData.append('access_key', accessKey);
+    formData.append('name', form.nombre.value.trim());
+    formData.append('email', form.correo.value.trim());
+    formData.append('phone', form.telefono.value.trim());
+    formData.append('message', form.mensaje.value.trim());
+    formData.append('subject', 'Nueva solicitud — ASISTMED Domicilios');
+    formData.append('from_name', 'ASISTMED Web');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+      const successMessage = data.message || data.body?.message;
+      const isSuccess = data.success === true;
+
+      if (response.ok && isSuccess){
+        status.textContent = '¡Gracias! Hemos recibido tu solicitud, te contactaremos pronto.';
+        status.style.color = '#0D6EFD';
+        form.reset();
+      } else {
+        status.textContent = successMessage || 'No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos por WhatsApp.';
+        status.style.color = '#DC2626';
+      }
+    } catch {
+      status.textContent = 'Error de conexión. Revisa tu internet e intenta de nuevo.';
+      status.style.color = '#DC2626';
+    } finally {
+      if (submitBtn){
+        submitBtn.disabled = false;
+        if (labelEl) labelEl.textContent = defaultLabel;
+      }
+    }
   });
 }
 

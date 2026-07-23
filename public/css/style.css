@@ -1090,6 +1090,20 @@ body.modal-open{ overflow: hidden; }
 .contact-form{
   background: var(--white); border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md); padding: 44px;
+  position: relative;
+}
+.form-honeypot{
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.contact-form .btn:disabled{
+  opacity: 0.72;
+  cursor: not-allowed;
 }
 .form-row{ margin-bottom: 20px; }
 .form-row label{ display:block; font-size:13.5px; font-weight:600; margin-bottom:8px; }

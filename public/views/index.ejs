@@ -364,7 +364,11 @@
     </div>
 
     <div class="contact-grid">
-      <form class="contact-form reveal left" id="contactForm" novalidate>
+      <form class="contact-form reveal left" id="contactForm" novalidate<% if (web3formsKey) { %> data-access-key="<%= web3formsKey %>"<% } %>>
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="botcheck">No llenar este campo</label>
+          <input type="checkbox" id="botcheck" name="botcheck" tabindex="-1" autocomplete="off">
+        </div>
         <div class="form-row">
           <label for="nombre">Nombre completo</label>
           <input type="text" id="nombre" name="nombre" required autocomplete="name">
@@ -381,8 +385,8 @@
           <label for="mensaje">Mensaje</label>
           <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué tipo de atención necesitas..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">
-          Enviar Solicitud
+        <button type="submit" class="btn btn-primary" id="contactSubmitBtn">
+          <span class="btn-label">Enviar Solicitud</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
         </button>
         <p class="form-status" id="formStatus" role="status"></p>
