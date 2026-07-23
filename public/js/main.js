@@ -84,7 +84,7 @@ const ASISTMED_DATA = {
       ]
     },
     {
-      icono:"balanza", imagen:"/img/service-05.PNG", titulo:"Tratamientos Sobrepeso",
+      icono:"balanza", imagen:"/img/service-05.png", titulo:"Tratamientos Sobrepeso",
       desc:"Ofrecemos acompañamiento de enfermería para pacientes que reciben tratamientos médicos orientados al control del sobrepeso y la obesidad.",
       aviso:"Importante: Este servicio se presta únicamente bajo prescripción médica. ASISTMED no formula medicamentos ni reemplaza la valoración del médico tratante.",
       incluye:[
@@ -108,7 +108,7 @@ const ASISTMED_DATA = {
       ]
     },
     {
-      icono:"banio", imagen:"/img/service-07.PNG", titulo:"Acompañamiento en Baño",
+      icono:"banio", imagen:"/img/service-07.png", titulo:"Acompañamiento en Baño",
       desc:"Asistencia durante el aseo e higiene personal, garantizando seguridad, comodidad y respeto por la dignidad del paciente.",
       incluye:["Asistencia en ducha o baño con privacidad","Apoyo en higiene personal diaria","Prevención de caídas en el baño","Cuidado de la piel e hidratación","Uso seguro de elementos de apoyo","Trato digno y respetuoso"]
     },
@@ -118,7 +118,7 @@ const ASISTMED_DATA = {
       incluye:["Apoyo para caminar dentro del hogar","Traslados seguros cama-silla","Ejercicios de movilidad guiados","Uso correcto de ayudas técnicas","Prevención de caídas","Acompañamiento en desplazamientos cortos"]
     },
     {
-      icono:"cerebro", imagen:"/img/service-09.PNG", titulo:"Estimulación Cognitiva",
+      icono:"cerebro", imagen:"/img/service-09.png", titulo:"Estimulación Cognitiva",
       desc:"Realizamos actividades enfocadas en fortalecer la memoria, la atención, la concentración, la orientación y el razonamiento. Especialmente recomendadas para adultos mayores y pacientes con deterioro cognitivo leve.",
       incluye:[
         "Memoria.",
@@ -134,7 +134,7 @@ const ASISTMED_DATA = {
       incluye:["Rutinas adaptadas a la condición del paciente","Ejercicios de flexibilidad y fuerza","Movilización articular supervisada","Caminatas guiadas y seguras","Prevención del sedentarismo","Progresión según capacidades"]
     },
     {
-      icono:"ludico", imagen:"/img/service-11.PNG", titulo:"Actividades Lúdicas",
+      icono:"ludico", imagen:"/img/service-11.png", titulo:"Actividades Lúdicas",
       desc:"Promovemos el bienestar emocional mediante actividades recreativas que favorecen la integración, la autoestima y una mejor calidad de vida.",
       incluyeTitulo:"Incluyen:",
       incluye:[
@@ -147,7 +147,7 @@ const ASISTMED_DATA = {
       ]
     },
     {
-      icono:"peptido", imagen:"/img/service-12.PNG", titulo:"Programa Integral de Optimización y Terapias con Péptidos",
+      icono:"peptido", imagen:"/img/service-12.png", titulo:"Programa Integral de Optimización y Terapias con Péptidos",
       desc:"Ofrecemos un servicio de vanguardia que combina la ciencia médica, la nutrición avanzada y el entrenamiento físico para ayudarte a alcanzar tus metas de rendimiento, estética o longevidad de forma segura. No vendemos solo una aplicación; diseñamos un protocolo integral y supervisado por profesionales.",
       incluyeTitulo:"¿Qué incluye el servicio?",
       incluye:[
@@ -374,7 +374,8 @@ function initNavbar(){
 }
 
 function initReveal(){
-  const items = document.querySelectorAll('.reveal');
+  const items = document.querySelectorAll('.reveal:not(.in)');
+  const isMobile = window.matchMedia('(max-width: 768px)').matches;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting){
@@ -388,7 +389,10 @@ function initReveal(){
         else show();
       }
     });
-  }, { threshold: 0.15 });
+  }, {
+    threshold: isMobile ? 0.05 : 0.15,
+    rootMargin: isMobile ? '0px 0px 8% 0px' : '0px'
+  });
   items.forEach(el => observer.observe(el));
 }
 
