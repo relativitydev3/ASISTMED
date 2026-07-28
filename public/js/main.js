@@ -274,6 +274,67 @@ function closeServiceModal(){
   document.body.classList.remove('modal-open');
 }
 
+function renderServicesListModal(){
+  const list = document.getElementById('servicesListModalList');
+  if (!list) return;
+
+  list.innerHTML = ASISTMED_DATA.servicios.map((item, i) => `
+    <li>
+      <button type="button" class="services-list-modal__item" data-service-index="${i}">
+        <span class="services-list-modal__num">${String(i + 1).padStart(2, '0')}</span>
+        <span class="services-list-modal__icon" aria-hidden="true">${icon(item.icono)}</span>
+        <span class="services-list-modal__info">
+          <strong>${item.titulo}</strong>
+          <small>${item.desc}</small>
+        </span>
+        <svg class="services-list-modal__arrow" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </li>
+  `).join('');
+}
+
+function openServicesListModal(){
+  const modal = document.getElementById('servicesListModal');
+  if (!modal) return;
+
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  document.getElementById('servicesListModalClose')?.focus();
+}
+
+function closeServicesListModal(){
+  const modal = document.getElementById('servicesListModal');
+  if (!modal) return;
+
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  document.getElementById('servicesListTrigger')?.focus();
+}
+
+function initServicesListModal(){
+  const modal = document.getElementById('servicesListModal');
+  const trigger = document.getElementById('servicesListTrigger');
+  const list = document.getElementById('servicesListModalList');
+  if (!modal || !trigger || !list) return;
+
+  renderServicesListModal();
+
+  trigger.addEventListener('click', openServicesListModal);
+
+  modal.querySelectorAll('[data-close-services-list]').forEach(el => {
+    el.addEventListener('click', closeServicesListModal);
+  });
+
+  list.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-service-index]');
+    if (!btn) return;
+    closeServicesListModal();
+    openServiceModal(parseInt(btn.dataset.serviceIndex, 10));
+  });
+}
+
 function initServiceModal(){
   const modal = document.getElementById('serviceModal');
   const grid = document.getElementById('servicesGrid');
@@ -299,7 +360,11 @@ function initServiceModal(){
   document.getElementById('serviceModalContact').addEventListener('click', closeServiceModal);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) closeServiceModal();
+    if (e.key !== 'Escape') return;
+    const detailModal = document.getElementById('serviceModal');
+    const listModal = document.getElementById('servicesListModal');
+    if (detailModal?.classList.contains('open')) closeServiceModal();
+    else if (listModal?.classList.contains('open')) closeServicesListModal();
   });
 }
 
@@ -660,6 +725,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initForm();
   initYear();
   initServiceModal();
+  initServicesListModal();
   initCoverageMap();
 
   // Vuelve a activar el observer de reveal sobre los nodos recién inyectados

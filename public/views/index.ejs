@@ -140,7 +140,9 @@
      <section class="section section--gray" id="servicios">
       <div class="container">
         <div class="section-header center reveal">
-          <p class="eyebrow" style="justify-content:center;">Lo que hacemos</p>
+          <button type="button" class="eyebrow eyebrow--trigger" id="servicesListTrigger" style="justify-content:center;" aria-haspopup="dialog" aria-controls="servicesListModal">
+            Lo que hacemos
+          </button>
           <h2 class="section-title">Servicios de Cuidado a Domicilio</h2>
           <p class="section-subtitle">Programas diseñados para cada etapa y necesidad, ejecutados por profesionales certificados.</p>
         </div>
@@ -454,6 +456,25 @@
           WhatsApp
         </a>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================================================
+     MODAL LISTA DE SERVICIOS
+     ========================================================================== -->
+<div class="service-modal services-list-modal" id="servicesListModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="servicesListModalTitle">
+  <div class="service-modal__backdrop" data-close-services-list></div>
+  <div class="service-modal__dialog services-list-modal__dialog">
+    <button type="button" class="service-modal__close" id="servicesListModalClose" aria-label="Cerrar lista de servicios" data-close-services-list>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <div class="service-modal__body services-list-modal__body">
+      <p class="eyebrow">Catálogo ASISTMED</p>
+      <h2 class="service-modal__title" id="servicesListModalTitle">Todos nuestros servicios</h2>
+      <p class="services-list-modal__intro">Selecciona un servicio para ver el detalle completo.</p>
+      <ul class="services-list-modal__list" id="servicesListModalList"></ul>
     </div>
   </div>
 </div>
