@@ -414,11 +414,35 @@ function renderFaq(){
 /* ==========================================================================
    INTERACCIONES
    ========================================================================== */
+function renderMobileNavServices(){
+  const submenu = document.getElementById('navMobileServices');
+  if (!submenu) return;
+
+  submenu.innerHTML = ASISTMED_DATA.servicios.map((item, i) => `
+    <li>
+      <button type="button" class="nav-mobile__submenu-link" data-mobile-service="${i}">
+        ${item.titulo}
+      </button>
+    </li>
+  `).join('');
+}
+
 function initNavbar(){
   const nav = document.getElementById('navbar');
   const toggle = document.getElementById('navToggle');
   const mobile = document.getElementById('navMobile');
+  const servicesToggle = document.getElementById('navMobileServicesToggle');
+  const servicesSubmenu = document.getElementById('navMobileServices');
   if (!nav || !toggle || !mobile) return;
+
+  renderMobileNavServices();
+
+  const closeServicesSubmenu = () => {
+    if (!servicesToggle || !servicesSubmenu) return;
+    servicesToggle.classList.remove('open');
+    servicesToggle.setAttribute('aria-expanded', 'false');
+    servicesSubmenu.classList.remove('is-open');
+  };
 
   const closeMenu = () => {
     toggle.classList.remove('open');
@@ -427,6 +451,7 @@ function initNavbar(){
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Abrir menú');
     mobile.setAttribute('aria-hidden', 'true');
+    closeServicesSubmenu();
   };
 
   const openMenu = () => {
@@ -447,7 +472,31 @@ function initNavbar(){
     else openMenu();
   });
 
-  mobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  servicesToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const isOpen = !servicesToggle.classList.contains('open');
+    servicesToggle.classList.toggle('open', isOpen);
+    servicesToggle.setAttribute('aria-expanded', String(isOpen));
+    servicesSubmenu?.classList.toggle('is-open', isOpen);
+  });
+
+  mobile.addEventListener('click', (e) => {
+    const serviceBtn = e.target.closest('[data-mobile-service]');
+    if (serviceBtn) {
+      e.preventDefault();
+      const index = parseInt(serviceBtn.dataset.mobileService, 10);
+      closeMenu();
+      document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      openServiceModal(index);
+      return;
+    }
+
+    if (e.target.closest('.nav-mobile__toggle')) return;
+
+    const link = e.target.closest('a[href]');
+    if (link) closeMenu();
+  });
 
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) closeMenu();

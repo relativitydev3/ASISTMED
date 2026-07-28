@@ -31,7 +31,15 @@
 
 <nav class="nav-mobile" id="navMobile" aria-label="Navegación móvil" aria-hidden="true">
   <a href="#nosotros">Nosotros</a>
-  <a href="#servicios">Servicios</a>
+
+  <div class="nav-mobile__group">
+    <button type="button" class="nav-mobile__toggle" id="navMobileServicesToggle" aria-expanded="false" aria-controls="navMobileServices">
+      <span>Servicios</span>
+      <svg class="nav-mobile__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <ul class="nav-mobile__submenu" id="navMobileServices"></ul>
+  </div>
+
   <a href="#cobertura">Cobertura</a>
   <a href="#testimonios">Testimonios</a>
   <a href="#faq">Preguntas</a>
