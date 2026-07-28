@@ -415,6 +415,30 @@ input, textarea{ font-family: var(--font); }
   color: var(--white);
 }
 
+.hero-btn-whatsapp{
+  min-width: 280px;
+  padding: 18px 52px;
+  gap: 14px;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  box-shadow: 0 10px 28px rgba(37,211,102,0.38);
+}
+.hero-btn-whatsapp svg{
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.hero-btn-whatsapp:hover{
+  background: #20bd5a;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(37,211,102,0.48);
+}
 .hero-btn-primary svg{
   transition: transform 0.35s var(--ease);
 }

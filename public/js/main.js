@@ -41,6 +41,47 @@ const ASISTMED_DATA = {
 
   servicios: [
     {
+      icono:"jeringa", imagen:"/img/service-02.jpg", titulo:"Inyectología",
+      desc:"Administración segura de medicamentos por vía intramuscular, intravenosa, subcutánea e intradérmica, siempre bajo prescripción médica y siguiendo estrictos protocolos de bioseguridad.",
+      incluye:[
+        "Aplicación de medicamentos.",
+        "Valoración previa del paciente.",
+        "Observación posterior al procedimiento.",
+        "Atención domiciliaria con personal calificado."
+      ]
+    },
+    {
+      icono:"peptido", imagen:"/img/service-12.png", titulo:"Programa Integral de Optimización y Terapias con Péptidos",
+      desc:"Ofrecemos un servicio de vanguardia que combina la ciencia médica, la nutrición avanzada y el entrenamiento físico para ayudarte a alcanzar tus metas de rendimiento, estética o longevidad de forma segura. No vendemos solo una aplicación; diseñamos un protocolo integral y supervisado por profesionales.",
+      incluyeTitulo:"¿Qué incluye el servicio?",
+      incluye:[
+        "Diseño de plan nutricional: un nutriólogo especializado elabora tu dieta médica a medida para maximizar los efectos biológicos del tratamiento.",
+        "Planificación deportiva: un entrenador certificado estructura tu rutina de ejercicios alineada con tus objetivos específicos.",
+        "Aplicación clínica segura: una enfermera calificada administra los péptidos inyectables bajo estrictos protocolos de higiene y dosificación.",
+        "Seguimiento y ajustes: evaluaciones periódicas de tu evolución para adaptar la alimentación, el entrenamiento y las dosis."
+      ]
+    },
+    {
+      icono:"curacion", imagen:"/img/service-04.jpg", titulo:"Curaciones",
+      desc:"Realizamos curaciones simples y especializadas para favorecer la cicatrización, prevenir infecciones y acelerar el proceso de recuperación.",
+      incluye:[
+        "Curaciones de heridas.",
+        "Cambio de apósitos.",
+        "Valoración y seguimiento.",
+        "Educación sobre cuidados posteriores."
+      ]
+    },
+    {
+      icono:"pastilla", imagen:"/img/service-03.jpg", titulo:"Aplicación de Medicamentos",
+      desc:"Administración responsable de medicamentos formulados por el médico, garantizando el cumplimiento del tratamiento en la comodidad del hogar.",
+      incluye:["Administración según horario prescrito","Control de dosis y vía de administración","Registro de medicación suministrada","Verificación de la prescripción médica","Alertas a la familia sobre cambios","Seguimiento de reacciones adversas"]
+    },
+    {
+      icono:"fisico", imagen:"/img/service-10.jpg", titulo:"Actividades Físicas",
+      desc:"Diseñamos ejercicios adaptados a la condición de cada paciente para mejorar la movilidad, fortalecer la musculatura y mantener la independencia funcional.",
+      incluye:["Rutinas adaptadas a la condición del paciente","Ejercicios de flexibilidad y fuerza","Movilización articular supervisada","Caminatas guiadas y seguras","Prevención del sedentarismo","Progresión según capacidades"]
+    },
+    {
       icono:"manos", imagen:"/img/service-01.jpg", titulo:"Cuidado Integral Adulto Mayor",
       desc:"Brindamos atención personalizada para adultos mayores, promoviendo su bienestar físico, emocional y social mediante un acompañamiento profesional y humanizado.",
       incluye:[
@@ -56,31 +97,6 @@ const ASISTMED_DATA = {
         "Actividades físicas adaptadas.",
         "Actividades recreativas y lúdicas.",
         "Acompañamiento a citas médicas cuando sea requerido."
-      ]
-    },
-    {
-      icono:"jeringa", imagen:"/img/service-02.jpg", titulo:"Inyectología",
-      desc:"Administración segura de medicamentos por vía intramuscular, intravenosa, subcutánea e intradérmica, siempre bajo prescripción médica y siguiendo estrictos protocolos de bioseguridad.",
-      incluye:[
-        "Aplicación de medicamentos.",
-        "Valoración previa del paciente.",
-        "Observación posterior al procedimiento.",
-        "Atención domiciliaria con personal calificado."
-      ]
-    },
-    {
-      icono:"pastilla", imagen:"/img/service-03.jpg", titulo:"Aplicación de Medicamentos",
-      desc:"Administración responsable de medicamentos formulados por el médico, garantizando el cumplimiento del tratamiento en la comodidad del hogar.",
-      incluye:["Administración según horario prescrito","Control de dosis y vía de administración","Registro de medicación suministrada","Verificación de la prescripción médica","Alertas a la familia sobre cambios","Seguimiento de reacciones adversas"]
-    },
-    {
-      icono:"curacion", imagen:"/img/service-04.jpg", titulo:"Curaciones",
-      desc:"Realizamos curaciones simples y especializadas para favorecer la cicatrización, prevenir infecciones y acelerar el proceso de recuperación.",
-      incluye:[
-        "Curaciones de heridas.",
-        "Cambio de apósitos.",
-        "Valoración y seguimiento.",
-        "Educación sobre cuidados posteriores."
       ]
     },
     {
@@ -129,11 +145,6 @@ const ASISTMED_DATA = {
       ]
     },
     {
-      icono:"fisico", imagen:"/img/service-10.jpg", titulo:"Actividades Físicas",
-      desc:"Diseñamos ejercicios adaptados a la condición de cada paciente para mejorar la movilidad, fortalecer la musculatura y mantener la independencia funcional.",
-      incluye:["Rutinas adaptadas a la condición del paciente","Ejercicios de flexibilidad y fuerza","Movilización articular supervisada","Caminatas guiadas y seguras","Prevención del sedentarismo","Progresión según capacidades"]
-    },
-    {
       icono:"ludico", imagen:"/img/service-11.png", titulo:"Actividades Lúdicas",
       desc:"Promovemos el bienestar emocional mediante actividades recreativas que favorecen la integración, la autoestima y una mejor calidad de vida.",
       incluyeTitulo:"Incluyen:",
@@ -144,17 +155,6 @@ const ASISTMED_DATA = {
         "Música.",
         "Conversación guiada.",
         "Dinámicas recreativas."
-      ]
-    },
-    {
-      icono:"peptido", imagen:"/img/service-12.png", titulo:"Programa Integral de Optimización y Terapias con Péptidos",
-      desc:"Ofrecemos un servicio de vanguardia que combina la ciencia médica, la nutrición avanzada y el entrenamiento físico para ayudarte a alcanzar tus metas de rendimiento, estética o longevidad de forma segura. No vendemos solo una aplicación; diseñamos un protocolo integral y supervisado por profesionales.",
-      incluyeTitulo:"¿Qué incluye el servicio?",
-      incluye:[
-        "Diseño de plan nutricional: un nutriólogo especializado elabora tu dieta médica a medida para maximizar los efectos biológicos del tratamiento.",
-        "Planificación deportiva: un entrenador certificado estructura tu rutina de ejercicios alineada con tus objetivos específicos.",
-        "Aplicación clínica segura: una enfermera calificada administra los péptidos inyectables bajo estrictos protocolos de higiene y dosificación.",
-        "Seguimiento y ajustes: evaluaciones periódicas de tu evolución para adaptar la alimentación, el entrenamiento y las dosis."
       ]
     }
   ],
