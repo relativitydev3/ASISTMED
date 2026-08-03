@@ -17,7 +17,14 @@ function getAppUrl(req) {
 
 function getSiteConfig(req) {
   const url = getAppUrl(req);
-  const name = 'ASISTMED Domicilios';
+  const name = 'ASISTMED Medicina Asistida';
+  const brandShort = 'ASISTMED Domicilios';
+  const alternateNames = [
+    'ASISTMED Domicilios',
+    'ASISTMED Medellín',
+    'ASISTMED Valle de Aburrá',
+    'ASISTMED Colombia medicina asistida',
+  ];
 
   const services = [
     'Inyectología a domicilio',
@@ -48,6 +55,14 @@ function getSiteConfig(req) {
 
   const faq = [
     {
+      q: '¿Qué es ASISTMED Medicina Asistida?',
+      r: 'ASISTMED Medicina Asistida es nuestro servicio de salud a domicilio en Medellín y el Valle de Aburrá. Ofrecemos enfermería, inyectología, curaciones, cuidado adulto mayor y terapias con personal certificado en la comodidad del hogar.',
+    },
+    {
+      q: '¿Es la misma ASISTMED que aparece en otras búsquedas?',
+      r: 'Somos ASISTMED Medicina Asistida, empresa de servicios de salud domiciliaria en Antioquia, Colombia. Para contactarnos usa nuestro WhatsApp +57 324 687 9234 o el sitio oficial asistmed.com.',
+    },
+    {
       q: '¿En qué zonas prestan el servicio?',
       r: 'Atendemos en Medellín, Bello, Envigado, Sabaneta, Itagüí, La Estrella, Copacabana, Girardota y Barbosa.',
     },
@@ -70,20 +85,21 @@ function getSiteConfig(req) {
   ];
 
   const metaTitle =
-    'ASISTMED Domicilios | Enfermería e Inyectología a Domicilio en Medellín';
+    'ASISTMED Medicina Asistida | Enfermería a Domicilio en Medellín';
   const metaDescription =
-    'Servicios de salud a domicilio en Medellín y el Valle de Aburrá: inyectología, curaciones, péptidos, cuidado adulto mayor y enfermería certificada. Atención 24/7 por WhatsApp.';
+    'ASISTMED Medicina Asistida: servicios de salud a domicilio en Medellín y el Valle de Aburrá. Inyectología, curaciones, péptidos, cuidado adulto mayor y enfermería certificada. WhatsApp +57 324 687 9234.';
   const metaKeywords = [
-    'asistmed',
+    'asistmed medicina asistida',
+    'asistmed medellín',
+    'asistmed domicilios medellín',
+    'asistmed valle de aburrá',
+    'medicina asistida a domicilio',
+    'asistmed colombia enfermería',
+    'asistmed inyectología domicilio',
     'enfermería a domicilio medellín',
-    'inyectología a domicilio',
-    'curaciones a domicilio',
-    'cuidado adulto mayor',
+    'curaciones a domicilio antioquia',
+    'cuidado adulto mayor medellín',
     'salud domiciliaria valle de aburrá',
-    'terapias péptidos medellín',
-    'aplicación medicamentos domicilio',
-    'cuidadores medellín',
-    'servicios de enfermería domiciliaria',
   ].join(', ');
 
   const ogImage = `${url}img/og-asistmed.jpg`;
@@ -91,6 +107,9 @@ function getSiteConfig(req) {
   return {
     url,
     name,
+    brandShort,
+    alternateNames,
+    slogan: 'Medicina asistida y cuidado profesional en casa',
     tagline: 'Cuidado profesional, atención humana en casa',
     email: 'contacto@asistmed.com',
     phone: '+57 324 687 9234',
@@ -112,7 +131,7 @@ function getSiteConfig(req) {
       keywords: metaKeywords,
       ogTitle: metaTitle,
       ogDescription:
-        'Tu bienestar y el de tu familia en la comodidad de tu hogar. Inyectología, curaciones, péptidos y acompañamiento profesional en Medellín y el Valle de Aburrá.',
+        'ASISTMED Medicina Asistida — tu servicio de salud a domicilio en Medellín y el Valle de Aburrá. Inyectología, curaciones, péptidos y acompañamiento profesional.',
     },
   };
 }

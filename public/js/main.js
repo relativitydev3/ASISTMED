@@ -179,6 +179,7 @@ const ASISTMED_DATA = {
   ],
 
   faq: [
+    { q:"¿Qué es ASISTMED Medicina Asistida?", r:"ASISTMED Medicina Asistida es nuestro servicio de salud a domicilio en Medellín y el Valle de Aburrá: enfermería, inyectología, curaciones y cuidado integral en casa con personal certificado." },
     { q:"¿En qué zonas prestan el servicio?", r:"Atendemos en Medellín, Bello, Envigado, Sabaneta, Itagüí, La Estrella, Copacabana, Girardota y Barbosa." },
     { q:"¿El personal está certificado?", r:"Sí, todo nuestro equipo de enfermería y cuidadores cuenta con formación certificada y verificación de antecedentes." },
     { q:"¿Puedo solicitar un servicio por horas?", r:"Sí, contamos con planes por horas, por día o programas de acompañamiento permanente según la necesidad del paciente." },
@@ -634,8 +635,8 @@ function initForm(){
     formData.append('email', form.correo.value.trim());
     formData.append('phone', form.telefono.value.trim());
     formData.append('message', form.mensaje.value.trim());
-    formData.append('subject', 'Nueva solicitud — ASISTMED Domicilios');
-    formData.append('from_name', 'ASISTMED Web');
+    formData.append('subject', 'Nueva solicitud — ASISTMED Medicina Asistida');
+    formData.append('from_name', 'ASISTMED Medicina Asistida Web');
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {

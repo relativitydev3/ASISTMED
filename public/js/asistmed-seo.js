@@ -39,7 +39,7 @@ window.AsistmedSEO = (function () {
   function buildSchemas() {
     const c = cfg();
     const url = pageUrl();
-    const name = c.name || 'ASISTMED Domicilios';
+    const name = c.name || 'ASISTMED Medicina Asistida';
     const desc = c.meta?.description || '';
     const image = c.ogImage || `${url}/img/og-asistmed.jpg`;
     const wa = `https://wa.me/${c.whatsapp || '573246879234'}`;

@@ -9,6 +9,8 @@ function buildSeoSchemas(site) {
     '@type': 'MedicalBusiness',
     '@id': `${url}/#organization`,
     name: site.name,
+    alternateName: site.alternateNames || [site.brandShort],
+    slogan: site.slogan,
     description: desc,
     url: `${url}/`,
     image,
@@ -41,7 +43,7 @@ function buildSeoSchemas(site) {
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Servicios ASISTMED Domicilios',
+      name: `Servicios ${site.name}`,
       itemListElement: site.services.map((serviceName, index) => ({
         '@type': 'Offer',
         position: index + 1,
