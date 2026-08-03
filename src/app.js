@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const indexRoutes = require('./routes/index');
+const seoRoutes = require('./routes/seo');
 
 const app = express();
 
@@ -10,6 +11,9 @@ app.set('views', path.join(__dirname, '../public/views'));
 
 app.use(express.json({ limit: '32kb' }));
 app.use(express.urlencoded({ extended: true, limit: '32kb' }));
+
+app.use('/', seoRoutes);
+
 app.use('/css', express.static(path.join(__dirname, '../public/css')));
 app.use('/js', express.static(path.join(__dirname, '../public/js')));
 app.use('/img', express.static(path.join(__dirname, '../public/img')));

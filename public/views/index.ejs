@@ -1,53 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASISTMED Domicilios | Cuidado Profesional y Atención Humana en Casa</title>
-<meta name="description" content="ASISTMED Domicilios ofrece cuidado profesional de salud a domicilio en Medellín y el Valle de Aburrá: inyectología, curaciones, acompañamiento a adultos mayores y terapias especializadas.">
-<meta name="keywords" content="asistmed, cuidado a domicilio, inyectología a domicilio, enfermería domiciliaria, adulto mayor Medellín, curaciones a domicilio, cuidadores Medellín">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.asistmed.com/">
-<meta name="theme-color" content="#0D6EFD">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="ASISTMED Domicilios | Cuidado Profesional, Atención Humana">
-<meta property="og:description" content="Tu bienestar y el de tu familia en la comodidad de tu hogar. Servicios de enfermería, inyectología y acompañamiento a domicilio en Medellín y el Valle de Aburrá.">
-<meta property="og:image" content="/img/og-asistmed.jpg">
-<meta property="og:url" content="https://www.asistmed.com/">
-<meta property="og:locale" content="es_CO">
-<meta property="og:site_name" content="ASISTMED Domicilios">
-
-<!-- Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ASISTMED Domicilios | Cuidado Profesional, Atención Humana">
-<meta name="twitter:description" content="Servicios de salud a domicilio en Medellín y el Valle de Aburrá: inyectología, curaciones, acompañamiento y más.">
-<meta name="twitter:image" content="/img/og-asistmed.jpg">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="/img/logo.png">
-
-<!-- Schema.org JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "name": "ASISTMED Domicilios",
-  "image": "https://www.asistmed.com/img/og-asistmed.jpg",
-  "description": "Servicios profesionales de enfermería, inyectología y acompañamiento a domicilio en Medellín y el Valle de Aburrá.",
-  "url": "https://www.asistmed.com/",
-  "telephone": "+57-324-687-9234",
-  "priceRange": "$$",
-  "areaServed": ["Medellín","Bello","Envigado","Sabaneta","Itagüí","La Estrella","Copacabana","Girardota","Barbosa"],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Medellín",
-    "addressRegion": "Antioquia",
-    "addressCountry": "CO"
-  }
-}
-</script>
+<%- include('partials/head-seo') %>
+<% if (typeof web3formsKey !== 'undefined' && web3formsKey) { %>
+<meta name="web3forms-key" content="<%= web3formsKey %>">
+<% } %>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -488,7 +445,10 @@
 
 <%- include('partials/footer') %>
 
+<script src="/js/site-config.js"></script>
+<script src="/js/asistmed-seo.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="/js/main.js" defer></script>
+<script>AsistmedSEO.init();</script>
 </body>
 </html>
