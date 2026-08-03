@@ -204,7 +204,7 @@ input, textarea{ font-family: var(--font); }
   box-shadow: 0 4px 24px rgba(17,17,17,0.06);
 }
 .navbar.scrolled .logo-img{
-  height: 58px;
+  height: 75px;
 }
 .nav-inner{
   width:100%;
@@ -226,7 +226,7 @@ input, textarea{ font-family: var(--font); }
   line-height: 0;
 }
 .logo-img{
-  height: 96px;
+  height: 125px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -1290,6 +1290,39 @@ body.modal-open{ overflow: hidden; }
 .info-card .card-icon{ margin-bottom:0; flex-shrink:0; }
 .info-card h4{ font-size:15.5px; font-weight:600; margin-bottom:4px; }
 .info-card p{ font-size:14px; color: var(--gray-text); }
+.card-icon--whatsapp{
+  background: rgba(37,211,102,0.14);
+}
+.card-icon--whatsapp svg{
+  stroke: none;
+  fill: #1a9d4f;
+  width: 26px;
+  height: 26px;
+}
+.info-card-wa-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-text);
+  margin-top: 2px;
+  transition: color 0.3s var(--ease), gap 0.3s var(--ease);
+}
+.info-card-wa-link svg{
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.55;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.info-card-wa-link:hover{
+  color: #128C7E;
+}
+.info-card-wa-link:hover svg{
+  opacity: 1;
+  transform: translateX(3px);
+}
 .contact-map{ border-radius: var(--radius-md); aspect-ratio: 16/9; overflow:hidden; }
 
 /* ==========================================================================
