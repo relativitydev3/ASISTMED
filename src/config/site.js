@@ -6,6 +6,22 @@ function getAppUrl(req) {
   if (process.env.SITE_URL) {
     return normalizeUrl(process.env.SITE_URL.trim());
   }
+  if (req) {
+    const host = (req.get('x-forwarded-host') || req.get('host') || '')
+      .split(',')[0]
+      .trim();
+    const isPreviewHost =
+      !host ||
+      host.includes('.vercel.app') ||
+      /^localhost(:\d+)?$/i.test(host) ||
+      host.startsWith('127.0.0.1');
+    if (!isPreviewHost) {
+      const proto = (req.get('x-forwarded-proto') || req.protocol || 'https')
+        .split(',')[0]
+        .trim();
+      return normalizeUrl(`${proto}://${host}`);
+    }
+  }
   if (process.env.VERCEL_URL) {
     return normalizeUrl(`https://${process.env.VERCEL_URL}`);
   }
