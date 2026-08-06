@@ -397,9 +397,16 @@ function renderTestimonials(){
   dots.innerHTML = ASISTMED_DATA.testimonios.map((_, i) => `<button aria-label="Testimonio ${i+1}" data-index="${i}" class="${i===0?'active':''}"></button>`).join('');
 }
 
+function getFaqItems() {
+  if (window.ASISTMED_CONFIG?.faq?.length) {
+    return window.ASISTMED_CONFIG.faq;
+  }
+  return ASISTMED_DATA.faq;
+}
+
 function renderFaq(){
   const list = document.getElementById('faqList');
-  list.innerHTML = ASISTMED_DATA.faq.map((item, i) => `
+  list.innerHTML = getFaqItems().map((item, i) => `
     <div class="faq-item reveal" data-index="${i}">
       <button class="faq-question" aria-expanded="false">
         ${item.q}
@@ -595,7 +602,11 @@ function initForm(){
   const status = document.getElementById('formStatus');
   if (!form || !status) return;
 
-  const accessKey = form.dataset.accessKey || 'bfd1f268-385a-45ed-be74-60f176c7a3b3';
+  const contactCfg = window.ASISTMED_CONTACT || {};
+  const accessKey =
+    form.dataset.accessKey ||
+    contactCfg.accessKey ||
+    'bfd1f268-385a-45ed-be74-60f176c7a3b3';
   const submitBtn = form.querySelector('#contactSubmitBtn');
   const labelEl = submitBtn?.querySelector('.btn-label');
   const defaultLabel = labelEl?.textContent || 'Enviar Solicitud';

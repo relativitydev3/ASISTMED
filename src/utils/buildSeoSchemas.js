@@ -2,7 +2,7 @@ function buildSeoSchemas(site) {
   const url = site.url.replace(/\/$/, '');
   const desc = site.meta.description;
   const image = site.ogImage;
-  const wa = `https://wa.me/${site.whatsapp}`;
+  const sameAs = site.sameAs || [`https://wa.me/${site.whatsapp}`];
 
   const medicalBusiness = {
     '@context': 'https://schema.org',
@@ -11,8 +11,10 @@ function buildSeoSchemas(site) {
     name: site.name,
     alternateName: site.alternateNames || [site.brandShort],
     slogan: site.slogan,
-    description: desc,
+    description: site.aiSummary || desc,
+    disambiguatingDescription: site.aiSummary || desc,
     url: `${url}/`,
+    identifier: site.domain,
     image,
     logo: site.logo,
     email: site.email,
@@ -28,7 +30,14 @@ function buildSeoSchemas(site) {
       '@type': 'City',
       name,
     })),
-    sameAs: [wa],
+    sameAs,
+    knowsAbout: [
+      'Medicina asistida',
+      'Enfermería a domicilio',
+      'Inyectología domiciliaria',
+      'Cuidado del adulto mayor',
+      'Salud domiciliaria',
+    ],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: site.phoneTel,
@@ -65,6 +74,11 @@ function buildSeoSchemas(site) {
     description: desc,
     inLanguage: 'es-CO',
     publisher: { '@id': `${url}/#organization` },
+    potentialAction: {
+      '@type': 'CommunicateAction',
+      target: `https://wa.me/${site.whatsapp}`,
+      name: 'Contactar por WhatsApp',
+    },
   };
 
   const webPage = {

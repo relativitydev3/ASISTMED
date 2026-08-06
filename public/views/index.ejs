@@ -5,7 +5,7 @@
 <% if (typeof web3formsKey !== 'undefined' && web3formsKey) { %>
 <meta name="web3forms-key" content="<%= web3formsKey %>">
 <% } %>
-
+<meta name="google-site-verification" content="6ITn_h_MYeO99OIex8KwZkVnYCFmyjpQZmC93brVMAU" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -206,6 +206,7 @@
       <p class="eyebrow">¿Quiénes somos?</p>
       <h2 class="section-title">Cuidado profesional con calidez humana, en tu propio hogar</h2>
       <p>En <strong>ASISTMED Medicina Asistida</strong> creemos que la recuperación y el bienestar ocurren mejor en un entorno familiar. Por eso reunimos un equipo de profesionales de la salud —enfermeros, auxiliares y cuidadores— formados para brindar atención segura, cálida y personalizada.</p>
+      <p id="que-hace-asistmed"><%= site.aiSummary %></p>
       <p>Acompañamos a adultos mayores, personas en recuperación y familias que necesitan tranquilidad, con protocolos claros, seguimiento constante y comunicación permanente con los familiares responsables.</p>
       <a href="#servicios" class="btn btn-secondary about-cta">Conocer nuestros servicios</a>
     </div>
@@ -309,6 +310,14 @@
     </div>
 
     <div class="faq-list" id="faqList"></div>
+    <noscript>
+      <dl class="faq-noscript">
+        <% site.faq.forEach(function(item) { %>
+        <dt><%= item.q %></dt>
+        <dd><%= item.r %></dd>
+        <% }); %>
+      </dl>
+    </noscript>
   </div>
 </section>
 
@@ -453,6 +462,7 @@
 <%- include('partials/footer') %>
 
 <script src="/js/site-config.js"></script>
+<script src="/js/contact-config.js"></script>
 <script src="/js/asistmed-seo.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="/js/main.js" defer></script>

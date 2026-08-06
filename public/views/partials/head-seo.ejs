@@ -10,7 +10,9 @@
 <meta name="geo.placename" content="<%= site.city %>, <%= site.country %>">
 <meta name="application-name" content="<%= site.name %>">
 <meta name="apple-mobile-web-app-title" content="ASISTMED">
-<meta name="format-detection" content="telephone=yes"> href="<%= site.url %>">
+<meta name="format-detection" content="telephone=yes">
+<link rel="canonical" href="<%= site.url %>">
+<meta name="summary" content="<%= site.aiSummary %>">
 <link rel="alternate" hreflang="es" href="<%= site.url %>">
 <link rel="alternate" hreflang="x-default" href="<%= site.url %>">
 
@@ -31,6 +33,11 @@
 <meta name="twitter:image" content="<%= site.ogImage %>">
 
 <link rel="icon" type="image/png" href="/img/logo.png">
+<% if (site.social) { %>
+<link rel="me" href="<%= site.social.instagram %>">
+<link rel="me" href="<%= site.social.facebook %>">
+<link rel="me" href="<%= site.social.tiktok %>">
+<% } %>
 
 <% schemas.forEach(function(schema, index) { %>
 <script type="application/ld+json" data-asistmed-schema="<%= index %>"><%- JSON.stringify(schema) %></script>

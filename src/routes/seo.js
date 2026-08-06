@@ -1,5 +1,6 @@
 const express = require('express');
 const { getSiteConfig } = require('../config/site');
+const { accessKey: web3formsAccessKey } = require('../config/web3forms');
 const { safeScriptJson } = require('../utils/safeJson');
 
 const router = express.Router();
@@ -40,6 +41,17 @@ router.get('/js/site-config.js', (req, res) => {
   res.set('Cache-Control', 'public, max-age=300');
   res.type('application/javascript');
   res.send(`window.ASISTMED_CONFIG = ${safeScriptJson(site)};`);
+});
+
+router.get('/js/contact-config.js', (req, res) => {
+  res.set('Cache-Control', 'public, max-age=300');
+  res.type('application/javascript');
+  res.send(
+    `window.ASISTMED_CONTACT = ${safeScriptJson({
+      accessKey: web3formsAccessKey,
+      endpoint: 'https://api.web3forms.com/submit',
+    })};`
+  );
 });
 
 module.exports = router;

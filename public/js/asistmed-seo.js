@@ -40,23 +40,32 @@ window.AsistmedSEO = (function () {
     const c = cfg();
     const url = pageUrl();
     const name = c.name || 'ASISTMED Medicina Asistida';
-    const desc = c.meta?.description || '';
+    const desc = c.meta?.description || c.aiSummary || '';
     const image = c.ogImage || `${url}/img/og-asistmed.jpg`;
-    const wa = `https://wa.me/${c.whatsapp || '573246879234'}`;
+    const sameAs = c.sameAs || [`https://wa.me/${c.whatsapp || '573246879234'}`];
 
     const medical = {
       '@context': 'https://schema.org',
       '@type': 'MedicalBusiness',
       '@id': `${url}/#organization`,
       name,
-      description: desc,
+      alternateName: c.alternateNames,
+      slogan: c.slogan,
+      description: c.aiSummary || desc,
       url: `${url}/`,
       image,
       logo: c.logo || `${url}/img/logo.png`,
       telephone: c.phoneTel || '+573246879234',
       email: c.email,
+      identifier: c.domain,
       areaServed: (c.municipalities || []).map((city) => ({ '@type': 'City', name: city })),
-      sameAs: [wa],
+      sameAs,
+      knowsAbout: [
+        'Medicina asistida',
+        'Enfermería a domicilio',
+        'Inyectología domiciliaria',
+        'Cuidado del adulto mayor',
+      ],
     };
 
     const faqPage = {
