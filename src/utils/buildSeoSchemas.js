@@ -70,6 +70,7 @@ function buildSeoSchemas(site) {
     '@type': 'WebSite',
     '@id': `${url}/#website`,
     name: site.name,
+    alternateName: site.alternateNames || [site.domain, site.brandShort],
     url: `${url}/`,
     description: desc,
     inLanguage: 'es-CO',

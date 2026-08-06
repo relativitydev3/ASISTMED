@@ -1,13 +1,18 @@
-/* ASISTMED — refuerzo SEO en cliente (meta + schemas desde site-config.js) */
+/* ASISTMED — sincroniza meta desde site-config.js (schemas ya van en el HTML del servidor) */
 window.AsistmedSEO = (function () {
   function cfg() {
     return window.ASISTMED_CONFIG || {};
   }
 
-  function pageUrl() {
-    const c = cfg();
-    if (c.url) return c.url.replace(/\/$/, '');
-    return window.location.origin;
+  /** Evita canonical erróneo si site-config trae URL de preview Vercel. */
+  function publicBaseUrl() {
+    const origin = window.location.origin.replace(/\/$/, '');
+    const fromConfig = (cfg().url || '').replace(/\/$/, '');
+    if (!fromConfig) return `${origin}/`;
+    if (fromConfig.includes('.vercel.app') && !origin.includes('.vercel.app')) {
+      return `${origin}/`;
+    }
+    return `${fromConfig}/`;
   }
 
   function setMeta(attr, key, value) {
@@ -36,68 +41,9 @@ window.AsistmedSEO = (function () {
     Object.entries(extra).forEach(([k, v]) => el.setAttribute(k, v));
   }
 
-  function buildSchemas() {
-    const c = cfg();
-    const url = pageUrl();
-    const name = c.name || 'ASISTMED Medicina Asistida';
-    const desc = c.meta?.description || c.aiSummary || '';
-    const image = c.ogImage || `${url}/img/og-asistmed.jpg`;
-    const sameAs = c.sameAs || [`https://wa.me/${c.whatsapp || '573246879234'}`];
-
-    const medical = {
-      '@context': 'https://schema.org',
-      '@type': 'MedicalBusiness',
-      '@id': `${url}/#organization`,
-      name,
-      alternateName: c.alternateNames,
-      slogan: c.slogan,
-      description: c.aiSummary || desc,
-      url: `${url}/`,
-      image,
-      logo: c.logo || `${url}/img/logo.png`,
-      telephone: c.phoneTel || '+573246879234',
-      email: c.email,
-      identifier: c.domain,
-      areaServed: (c.municipalities || []).map((city) => ({ '@type': 'City', name: city })),
-      sameAs,
-      knowsAbout: [
-        'Medicina asistida',
-        'Enfermería a domicilio',
-        'Inyectología domiciliaria',
-        'Cuidado del adulto mayor',
-      ],
-    };
-
-    const faqPage = {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      '@id': `${url}/#faq`,
-      mainEntity: (c.faq || []).map((item) => ({
-        '@type': 'Question',
-        name: item.q,
-        acceptedAnswer: { '@type': 'Answer', text: item.r },
-      })),
-    };
-
-    return [medical, faqPage];
-  }
-
-  function injectSchemas(schemas) {
-    document.querySelectorAll('script[data-asistmed-seo-schema]').forEach((n) => n.remove());
-    schemas.forEach((data, i) => {
-      const s = document.createElement('script');
-      s.type = 'application/ld+json';
-      s.setAttribute('data-asistmed-seo-schema', String(i));
-      s.textContent = JSON.stringify(data);
-      document.head.appendChild(s);
-    });
-  }
-
   function apply() {
     const c = cfg();
-    if (!c.url) return;
-
-    const url = c.url.replace(/\/$/, '') + '/';
+    const url = publicBaseUrl();
     const title = c.meta?.title;
     const desc = c.meta?.description;
     const image = c.ogImage;
@@ -113,8 +59,6 @@ window.AsistmedSEO = (function () {
     setLink('canonical', url);
     setLink('alternate', url, { hreflang: 'es' });
     setLink('alternate', url, { hreflang: 'x-default' });
-
-    injectSchemas(buildSchemas());
   }
 
   function init() {
