@@ -48,7 +48,7 @@ function getSiteConfig(req) {
     instagram: 'https://www.instagram.com/asistmed_/',
     facebook: 'https://www.facebook.com/share/19HgxELRAs/',
     tiktok: 'https://www.tiktok.com/@asistmed_',
-    whatsapp: 'https://wa.me/573246879234',
+    whatsapp: 'https://wa.me/573127868897',
   };
 
   const services = [
@@ -79,12 +79,12 @@ function getSiteConfig(req) {
   ];
 
   const aiSummary =
-    'ASISTMED Medicina Asistida (asistmedmedicinaasistida.com) es una empresa de medicina asistida y salud a domicilio en Medellín y el Valle de Aburrá, Colombia. Ofrece inyectología, curaciones, aplicación de medicamentos, terapias con péptidos, cuidado de adulto mayor, acompañamiento en hogar y actividades físicas adaptadas, con enfermería y cuidadores certificados. Contacto: WhatsApp +57 324 687 9234.';
+    'ASISTMED Medicina Asistida (asistmedmedicinaasistida.com) es una empresa de medicina asistida y salud a domicilio en Medellín y el Valle de Aburrá, Colombia. Ofrece inyectología, curaciones, aplicación de medicamentos, terapias con péptidos, cuidado de adulto mayor, acompañamiento en hogar y actividades físicas adaptadas, con enfermería y cuidadores certificados. Contacto: WhatsApp +57 312 786 8897.';
 
   const faq = [
     {
       q: '¿ASISTMED Medicina Asistida es lo mismo que Asismed u otras empresas similares?',
-      r: 'No. ASISTMED Medicina Asistida es salud domiciliaria en Medellín y el Valle de Aburrá (Antioquia). Nuestro sitio oficial es asistmedmedicinaasistida.com y WhatsApp +57 324 687 9234. No somos Asismed SAS ni otras marcas que Google pueda sugerir con nombres parecidos.',
+      r: 'No. ASISTMED Medicina Asistida es salud domiciliaria en Medellín y el Valle de Aburrá (Antioquia). Nuestro sitio oficial es asistmedmedicinaasistida.com y WhatsApp +57 312 786 8897. No somos Asismed SAS ni otras marcas que Google pueda sugerir con nombres parecidos.',
     },
     {
       q: '¿Qué hace ASISTMED Medicina Asistida?',
@@ -96,7 +96,7 @@ function getSiteConfig(req) {
     },
     {
       q: '¿Cuál es el sitio web oficial de ASISTMED Medicina Asistida?',
-      r: 'El sitio oficial es https://asistmedmedicinaasistida.com. También puedes contactarnos por WhatsApp al +57 324 687 9234 o en Instagram y Facebook como @asistmed_.',
+      r: 'El sitio oficial es https://asistmedmedicinaasistida.com. También puedes contactarnos por WhatsApp al +57 312 786 8897 o en Instagram y Facebook como @asistmed_.',
     },
     {
       q: '¿En qué zonas prestan el servicio?',
@@ -123,7 +123,7 @@ function getSiteConfig(req) {
   const metaTitle =
     'ASISTMED Medicina Asistida | asistmedmedicinaasistida.com';
   const metaDescription =
-    'ASISTMED Medicina Asistida (asistmedmedicinaasistida.com): medicina asistida y enfermería a domicilio en Medellín y el Valle de Aburrá. Inyectología, curaciones, péptidos y cuidado adulto mayor. WhatsApp +57 324 687 9234.';
+    'ASISTMED Medicina Asistida (asistmedmedicinaasistida.com): medicina asistida y enfermería a domicilio en Medellín y el Valle de Aburrá. Inyectología, curaciones, péptidos y cuidado adulto mayor. WhatsApp +57 312 786 8897.';
   const metaKeywords = [
     'asistmedmedicinaasistida',
     'asistmed medicina asistida',
@@ -149,9 +149,9 @@ function getSiteConfig(req) {
     tagline: 'Cuidado profesional, atención humana en casa',
     aiSummary,
     email: 'contacto@asistmed.com',
-    phone: '+57 324 687 9234',
-    phoneTel: '+573246879234',
-    whatsapp: '573246879234',
+    phone: '+57 312 786 8897',
+    phoneTel: '+573127868897',
+    whatsapp: '573127868897',
     locale: 'es_CO',
     country: 'Colombia',
     region: 'Antioquia',
