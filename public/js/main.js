@@ -19,6 +19,7 @@ const ASISTMED_DATA = {
     fisico: '<path d="M6 8v8M18 8v8M2 12h4M18 12h4M6 12h12"/>',
     ludico: '<circle cx="12" cy="12" r="9"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><path d="M8 15c1 1 2 1.5 4 1.5s3-.5 4-1.5"/>',
     peptido: '<path d="M4 20c4-8 8 4 12-4s4-8 4-8M4 8s4-8 8-4"/>',
+    fuego: '<path d="M12 22c4.4 0 7-3 7-6.7 0-3-1.8-5.4-4.8-8.3.1 2.3-1.2 3.8-2.4 4.8.1-3.7-1.4-6.6-4.8-9.6.3 4.2-2.5 6.3-3.6 9.5C2.1 15.9 5.5 22 12 22z"/><path d="M12 22c-1.8 0-3.2-1.2-3.2-3.1 0-1.5.9-2.8 2.5-4.3-.1 1.4.7 2.3 1.3 2.9.8-1 1.1-2.1.9-3.5 1.7 1.7 2.3 3.2 2.3 4.9C15.8 20.8 14.2 22 12 22z"/>',
     reloj: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',
     escudo: '<path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/>',
     corazon: '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>',
@@ -59,6 +60,19 @@ const ASISTMED_DATA = {
         "Planificación deportiva: un entrenador certificado estructura tu rutina de ejercicios alineada con tus objetivos específicos.",
         "Aplicación clínica segura: una enfermera calificada administra los péptidos inyectables bajo estrictos protocolos de higiene y dosificación.",
         "Seguimiento y ajustes: evaluaciones periódicas de tu evolución para adaptar la alimentación, el entrenamiento y las dosis."
+      ]
+    },
+    {
+      icono:"fuego", imagen:"/img/service-13-quemadores-grasa.jpeg", titulo:"Quemadores de Grasa",
+      desc:"Acompañamiento profesional para personas que, tras valoración y bajo indicación correspondiente, utilizan productos de apoyo para sus objetivos de composición corporal y bienestar.",
+      aviso:"Importante: este servicio requiere valoración profesional. Los productos no sustituyen una alimentación equilibrada, actividad física ni el manejo médico; su uso y aplicación se realizan únicamente cuando son apropiados para cada persona.",
+      incluyeTitulo:"Opciones y acompañamiento:",
+      incluye:[
+        "Orientación inicial según tus objetivos y antecedentes de salud.",
+        "Opciones disponibles: Two +, Vitamina C, Tense Up, Maxfit, L-Carnitina, Alcachofa, Silicio orgánico y Fosfa.",
+        "Aplicación segura cuando esté indicada por un profesional.",
+        "Seguimiento de bienestar y recomendaciones de hábitos saludables.",
+        "Atención personalizada por nuestro equipo de salud."
       ]
     },
     {

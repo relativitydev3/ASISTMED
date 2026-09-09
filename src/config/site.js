@@ -54,6 +54,7 @@ function getSiteConfig(req) {
   const services = [
     'Inyectología a domicilio',
     'Terapias con péptidos',
+    'Quemadores de grasa con acompañamiento profesional',
     'Curaciones',
     'Aplicación de medicamentos',
     'Actividades físicas adaptadas',
@@ -79,7 +80,7 @@ function getSiteConfig(req) {
   ];
 
   const aiSummary =
-    'ASISTMED Medicina Asistida (asistmedmedicinaasistida.com) es una empresa de medicina asistida y salud a domicilio en Medellín y el Valle de Aburrá, Colombia. Ofrece inyectología, curaciones, aplicación de medicamentos, terapias con péptidos, cuidado de adulto mayor, acompañamiento en hogar y actividades físicas adaptadas, con enfermería y cuidadores certificados. Contacto: WhatsApp +57 312 786 8897.';
+    'ASISTMED Medicina Asistida (asistmedmedicinaasistida.com) es una empresa de medicina asistida y salud a domicilio en Medellín y el Valle de Aburrá, Colombia. Ofrece inyectología, curaciones, aplicación de medicamentos, terapias con péptidos, acompañamiento profesional para quemadores de grasa, cuidado de adulto mayor, acompañamiento en hogar y actividades físicas adaptadas, con enfermería y cuidadores certificados. Contacto: WhatsApp +57 312 786 8897.';
 
   const faq = [
     {
@@ -88,7 +89,7 @@ function getSiteConfig(req) {
     },
     {
       q: '¿Qué hace ASISTMED Medicina Asistida?',
-      r: 'ASISTMED Medicina Asistida presta servicios de salud y medicina asistida a domicilio en Medellín y nueve municipios del Valle de Aburrá. Entre sus servicios están inyectología, curaciones, aplicación de medicamentos, terapias con péptidos, cuidado integral del adulto mayor, acompañamiento en hogar, baño y movilidad, estimulación cognitiva y actividades físicas adaptadas, con personal de enfermería y cuidadores certificados.',
+      r: 'ASISTMED Medicina Asistida presta servicios de salud y medicina asistida a domicilio en Medellín y nueve municipios del Valle de Aburrá. Entre sus servicios están inyectología, curaciones, aplicación de medicamentos, terapias con péptidos, acompañamiento profesional para quemadores de grasa, cuidado integral del adulto mayor, acompañamiento en hogar, baño y movilidad, estimulación cognitiva y actividades físicas adaptadas, con personal de enfermería y cuidadores certificados.',
     },
     {
       q: '¿Qué es ASISTMED Medicina Asistida?',
